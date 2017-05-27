@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[byebye-csdn]]></title>
+      <url>/2017/05/27/byebye-csdn/</url>
+      <content type="html"><![CDATA[<p>鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。</p>
+<p>原CSDN博客不再做更新，仍能访问，地址见站点概览。</p>
+<p>最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!<br>ps:赠桌面一张<br><img src="https://ooo.0o0.ooo/2017/05/27/5929919aa66d3.jpg" alt="desktop.jpg"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 杂谈 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 碎碎念 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2017/05/25/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -23,19 +46,19 @@
   
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[categories]]></title>
+      <title><![CDATA[文章分类]]></title>
       <url>/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
+      <title><![CDATA[关于李老师的博客]]></title>
+      <url>/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[文章标签]]></title>
       <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
