@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="爬虫,框架," />
 
 
 
@@ -90,16 +90,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。  第一眼看过去，有点蒙逼是正常的，接着往下看看就会会理解了。先了解了解每个组件是做什么的：  Spiders(爬虫类): Spiders是开发者自定义的一个类，用于解析相应并提取item或下个爬取的URL   Scrapy Engine(引擎): Engine负责控制数据流在系统中的流动走向，并在指定条件下触">
+<meta name="keywords" content="爬虫,框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/05/25/hello-world/index.html">
+<meta property="og:title" content="Scrapy架构简述">
+<meta property="og:url" content="http://yoursite.com/2017/07/05/Scrapy架构简述/index.html">
 <meta property="og:site_name" content="l.s">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-25T10:49:45.293Z">
+<meta property="og:description" content="瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。  第一眼看过去，有点蒙逼是正常的，接着往下看看就会会理解了。先了解了解每个组件是做什么的：  Spiders(爬虫类): Spiders是开发者自定义的一个类，用于解析相应并提取item或下个爬取的URL   Scrapy Engine(引擎): Engine负责控制数据流在系统中的流动走向，并在指定条件下触">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/07/04/595b0613922a8.png">
+<meta property="og:updated_time" content="2017-07-05T12:38:21.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Scrapy架构简述">
+<meta name="twitter:description" content="瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。  第一眼看过去，有点蒙逼是正常的，接着往下看看就会会理解了。先了解了解每个组件是做什么的：  Spiders(爬虫类): Spiders是开发者自定义的一个类，用于解析相应并提取item或下个爬取的URL   Scrapy Engine(引擎): Engine负责控制数据流在系统中的流动走向，并在指定条件下触">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/07/04/595b0613922a8.png">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/25/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/05/Scrapy架构简述/"/>
 
 
 
 
 
-  <title>Hello World | l.s</title>
+  <title>Scrapy架构简述 | l.s</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -283,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Scrapy架构简述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lee">
@@ -300,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Scrapy架构简述</h1>
         
 
         <div class="post-meta">
@@ -312,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T20:33:20+08:00">
+                2017-07-05
               </time>
             
 
@@ -328,12 +331,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-05T20:38:21+08:00">
+                2017-07-05
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -343,9 +368,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/25/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/05/Scrapy架构简述/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/25/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/05/Scrapy架构简述/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,15 +395,32 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。<br><img src="https://ooo.0o0.ooo/2017/07/04/595b0613922a8.png" alt="scrapy_architecture_02.png"></p>
+<hr>
+<p>第一眼看过去，有点蒙逼是正常的，接着往下看看就会会理解了。<br>先了解了解每个组件是做什么的：</p>
+<p><strong> Spiders(爬虫类): Spiders是开发者自定义的一个类，用于解析相应并提取item或下个爬取的URL </strong></p>
+<p><strong> Scrapy Engine(引擎): Engine负责控制数据流在系统中的流动走向，并在指定条件下触发一些事件。同时，也可以简单理解为Scrapy中数据流的中转站 </strong></p>
+<p><strong> Scheduler(调度器): Scheduler接收Engine发出的requests，并将这些requests放入到处理队列中，以便之后Engine需要时再提供 </strong></p>
+<p><strong> Downloader(下载器):  Downloader负责抓取网页信息并提供给Engine，进而转发至Spider </strong></p>
+<p><strong> Item Pipeline(处理管道): Item Pipeline负责处理Spiders类处理提取之后的item，典型的处理有数据清洗，验证以及持久化 </strong></p>
+<hr>
+<p>下面需要在介绍一下架构中存在的两种中间件</p>
+<p><strong> Spider middlewares: Spider中间件作为Spider和Engine中间存在的特定钩子，处理Engine返回的responses和自身向Engine输出的requests、items </strong></p>
+<p><strong> Downloader middlewares: Downloader中间件作为Engine和Downloader中间存在的特定钩子，处理从Engine发出的requests和自身向Engine返回的responses </strong></p>
+<p>在后期的讲解中，会慢慢涉及中间件的开发，并利用中间件方便的完成许多功能</p>
+<hr>
+<p>重点讲解一下整个架构的数据流的流通过程(看图理解)：</p>
+<p><strong> 1. Engine从Spider获取到第一条Requests </strong></p>
+<p><strong> 2. Engine将这条Requests发送至Scheduler,然后从Spider准备接收下一条Requests </strong></p>
+<p><strong> 3. Schedulers取出队列中的一条Requests发送给Engine </strong></p>
+<p><strong> 4. Engine 将接收到的Requests发送至Downloader，这个过程Requests会经过Downloader Middlewares </strong></p>
+<p><strong> 5. 一旦页面完成下载，Downloader会成为一个Response，然后将它发送至Engine，这个发送过程也会经过Downloader Middlewares </strong></p>
+<p><strong> 6. Engine接收到Response后，将它发送至Spider进行处理，会经过Spider Middlewares </strong></p>
+<p><strong> 7. Spider处理完Response然后返回items和新的Requests至Engine，会经过Spider Middlewares </strong></p>
+<p><strong> 8. Engine将接收到的Item发送至Item Pipelines，然后将Requests发送至Scheduler并准备接收下一条需要爬取的Requests </strong></p>
+<p><strong> 9. 一次url的爬取过程结束了，然后会重复这个爬取过程，直到Schedueler中没有Requests需要处理。 </strong></p>
+<hr>
+<p>通过这篇文章的阅读，可以大概了解Scrapy框架基本构成及数据流的走向。对后续Scrapy的学习会有非常大的帮助，同时为进阶的Scrapy学习及源码的剖析打下基础。</p>
 
       
     </div>
@@ -427,6 +469,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+            <a href="/tags/框架/" rel="tag"># 框架</a>
+          
+        </div>
+      
 
       
         
@@ -436,15 +486,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/10/红绿灯下的思考/" rel="next" title="红绿灯下的思考">
+                <i class="fa fa-chevron-left"></i> 红绿灯下的思考
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/27/byebye-csdn/" rel="prev" title="byebye-csdn">
-                byebye-csdn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,17 +548,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -599,22 +640,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -777,9 +802,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/25/hello-world/';
-          this.page.identifier = '2017/05/25/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2017/07/05/Scrapy架构简述/';
+          this.page.identifier = '2017/07/05/Scrapy架构简述/';
+          this.page.title = 'Scrapy架构简述';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://lee.disqus.com/embed.js';
