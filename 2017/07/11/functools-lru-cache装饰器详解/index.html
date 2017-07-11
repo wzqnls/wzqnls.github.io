@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="碎碎念," />
+  <meta name="keywords" content="python,装饰器，functools," />
 
 
 
@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。 原CSDN博客不再做更新，仍能访问，地址见站点概览。 最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!ps:赠桌面一张">
-<meta name="keywords" content="碎碎念">
+<meta name="description" content="在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。 举fluent python中的例子来说：首先实现一个计算运行时间的装饰器12345678910111213141516171819202122imp">
+<meta name="keywords" content="python,装饰器，functools">
 <meta property="og:type" content="article">
-<meta property="og:title" content="byebye-csdn">
-<meta property="og:url" content="http://yoursite.com/2017/05/27/byebye-csdn/index.html">
+<meta property="og:title" content="functools.lru_cache装饰器详解">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/functools-lru-cache装饰器详解/index.html">
 <meta property="og:site_name" content="l.s">
-<meta property="og:description" content="鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。 原CSDN博客不再做更新，仍能访问，地址见站点概览。 最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!ps:赠桌面一张">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/05/27/5929919aa66d3.jpg">
-<meta property="og:updated_time" content="2017-05-27T14:49:17.501Z">
+<meta property="og:description" content="在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。 举fluent python中的例子来说：首先实现一个计算运行时间的装饰器12345678910111213141516171819202122imp">
+<meta property="og:updated_time" content="2017-07-11T14:48:04.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="byebye-csdn">
-<meta name="twitter:description" content="鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。 原CSDN博客不再做更新，仍能访问，地址见站点概览。 最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!ps:赠桌面一张">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/05/27/5929919aa66d3.jpg">
+<meta name="twitter:title" content="functools.lru_cache装饰器详解">
+<meta name="twitter:description" content="在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。 举fluent python中的例子来说：首先实现一个计算运行时间的装饰器12345678910111213141516171819202122imp">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/27/byebye-csdn/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/11/functools-lru-cache装饰器详解/"/>
 
 
 
 
 
-  <title>byebye-csdn | l.s</title>
+  <title>functools.lru_cache装饰器详解 | l.s</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -286,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/27/byebye-csdn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/functools-lru-cache装饰器详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lee">
@@ -303,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">byebye-csdn</h1>
+          <h1 class="post-title" itemprop="name headline">functools.lru_cache装饰器详解</h1>
         
 
         <div class="post-meta">
@@ -315,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T22:37:35+08:00">
-                2017-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T22:46:24+08:00">
+                2017-07-11
               </time>
             
 
@@ -331,8 +329,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-27T22:49:17+08:00">
-                2017-05-27
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-11T22:48:04+08:00">
+                2017-07-11
               </time>
             
           </span>
@@ -350,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -368,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/27/byebye-csdn/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/11/functools-lru-cache装饰器详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/27/byebye-csdn/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/11/functools-lru-cache装饰器详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,9 +393,20 @@
       
 
       
-        <p>鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。</p>
-<p>原CSDN博客不再做更新，仍能访问，地址见站点概览。</p>
-<p>最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!<br>ps:赠桌面一张<br><img src="https://ooo.0o0.ooo/2017/05/27/5929919aa66d3.jpg" alt="desktop.jpg"></p>
+        <p>在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。</p>
+<p>举fluent python中的例子来说：<br>首先实现一个计算运行时间的装饰器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">import functools</div><div class="line"></div><div class="line">def clock(func):</div><div class="line"></div><div class="line">	# functools.wraps(func)装饰器的作用是将func函数的相关属性复制到clock中</div><div class="line">    # 比如说__name__, __doc__等等</div><div class="line">    @functools.wraps(func)</div><div class="line">    def clocked(*args, **kwargs):</div><div class="line">        t0 = time.time()</div><div class="line">        result = func(*args, **kwargs)</div><div class="line">        elapsed = time.time() - t0</div><div class="line">        name = func.__name__</div><div class="line">        arg_lst = []</div><div class="line">        if args:</div><div class="line">        	arg_lst.append(&apos;, &apos;.join(repr(arg) for arg in args))</div><div class="line">        if kwargs:</div><div class="line">        	pairs = [&apos;%s=%r&apos; % (k, w) for k, w in sorted(kwargs.items())]</div><div class="line">        	arg_lst.append(&apos;, &apos;.join(pairs))</div><div class="line">        arg_str = &apos;, &apos;.join(arg_lst)</div><div class="line">        print(&apos;[%0.8fs] %s(%s) -&gt; %r &apos; % (elapsed, name, arg_str, result))</div><div class="line">    return result</div></pre></td></tr></table></figure></p>
+<p>接下来写一个生成第n个斐波纳契数的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">from clockdeco import clock</div><div class="line"></div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div><div class="line"></div><div class="line">if __name__==&apos;__main__&apos;:</div><div class="line">	print(fibonacci(6))</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[0.00000041s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000051s] fibonacci(1) -&gt; 1</div><div class="line">[0.00003454s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000025s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000026s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000024s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000743s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001429s] fibonacci(3) -&gt; 2</div><div class="line">[0.00005602s] fibonacci(4) -&gt; 3</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000023s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000021s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000672s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001346s] fibonacci(3) -&gt; 2</div><div class="line">[0.00000021s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000691s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000027s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000708s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001363s] fibonacci(3) -&gt; 2</div><div class="line">[0.00002687s] fibonacci(4) -&gt; 3</div><div class="line">[0.00004682s] fibonacci(5) -&gt; 5</div><div class="line">[0.00011096s] fibonacci(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure></p>
+<p>有大量的重复函数计算在整个运行过程中，比如fibonacci(1)，fibonacci(2)就分别运行了多次。<br>现在给fibonacci()函数加上@functools.lru_cache()装饰器进行缓存实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">from clockdeco import clock</div><div class="line"></div><div class="line">@functools.lru_cache()</div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div><div class="line"></div><div class="line">if __name__==&apos;__main__&apos;:</div><div class="line">	print(fibonacci(6))</div></pre></td></tr></table></figure></p>
+<p>一共就多了一行代码，那看看运行结果如何。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[0.00000041s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000054s] fibonacci(1) -&gt; 1</div><div class="line">[0.00004040s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000104s] fibonacci(3) -&gt; 2</div><div class="line">[0.00005465s] fibonacci(4) -&gt; 3</div><div class="line">[0.00000072s] fibonacci(5) -&gt; 5</div><div class="line">[0.00006876s] fibonacci(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure></p>
+<p>不使用lru_cache装饰器时的运行时间是0.00011096s，加上以后变成了0.00006876s。这个效率增加的杠杆的，尤其在充斥这大量重复计算时，它更能够为程序的运行节省大量的时间。</p>
+<p>另外：functools.lru_cache(maxsize=128, typed=False)有两个可选参数，我们来看看他们分别代表的意义。</p>
+<p><strong> maxsize代表缓存的内存占用值，超过这个值之后，就的结果就会被释放，然后将新的计算结果进行缓存,其值应当设为2的幂 </strong></p>
+<p><strong> typed若为True，则会把不同的参数类型得到的结果分开保存 </strong></p>
+<p>ps：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@functools.lru_cache()</div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div></pre></td></tr></table></figure></p>
+<p>这段代码中叠加使用了两个装饰器，那具体这两个装饰器的先后顺序是怎么样的。<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@d1</div><div class="line">@d2</div><div class="line">def f():</div><div class="line">	print(&apos;f&apos;)</div></pre></td></tr></table></figure></p>
+<p>等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def f():</div><div class="line">	print(&apos;f&apos;)</div><div class="line"></div><div class="line">f = d1(d2(f))</div></pre></td></tr></table></figure></p>
+<p>也就是说从下往上依次执行</p>
 
       
     </div>
@@ -448,7 +457,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碎碎念/" rel="tag"># 碎碎念</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/装饰器，functools/" rel="tag"># 装饰器，functools</a>
           
         </div>
       
@@ -461,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/25/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/07/05/Scrapy架构简述/" rel="next" title="Scrapy架构简述">
+                <i class="fa fa-chevron-left"></i> Scrapy架构简述
               </a>
             
           </div>
@@ -470,10 +481,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/10/红绿灯下的思考/" rel="prev" title="红绿灯下的思考">
-                红绿灯下的思考 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -781,9 +788,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/27/byebye-csdn/';
-          this.page.identifier = '2017/05/27/byebye-csdn/';
-          this.page.title = 'byebye-csdn';
+          this.page.url = 'http://yoursite.com/2017/07/11/functools-lru-cache装饰器详解/';
+          this.page.identifier = '2017/07/11/functools-lru-cache装饰器详解/';
+          this.page.title = 'functools.lru_cache装饰器详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://lee.disqus.com/embed.js';
