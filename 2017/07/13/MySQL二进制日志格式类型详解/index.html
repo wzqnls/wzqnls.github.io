@@ -1,11 +1,399 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
   
     
-    <entry>
-      <title><![CDATA[MySQL二进制日志格式类型详解]]></title>
-      <url>/2017/07/13/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%E6%A0%BC%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/</url>
-      <content type="html"><![CDATA[<p>mysql很多有类型的日志，按照组件划分的话，可以分为<strong> 服务层日志 </strong>和 <strong> 存储引擎层日志 </strong>：</p>
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mysql,二进制日志，binlog," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="mysql很多有类型的日志，按照组件划分的话，可以分为 服务层日志 和  存储引擎层日志 ：  服务层日志：二进制日志、慢查日志、通用日志 存储引擎层日志：innodb(重做日志、回滚日志)  其中比较重要的就是服务器层的二进制日志，其中记录了所有对mysql数据库的修改事件，包括增删改查事件和对表结构的修改事件。要注意的一点是，只有成功执行了的事件才会记录在二进制日志中，未执行成功的不会保存在二">
+<meta name="keywords" content="mysql,二进制日志，binlog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL二进制日志格式类型详解">
+<meta property="og:url" content="http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/index.html">
+<meta property="og:site_name" content="l.s">
+<meta property="og:description" content="mysql很多有类型的日志，按照组件划分的话，可以分为 服务层日志 和  存储引擎层日志 ：  服务层日志：二进制日志、慢查日志、通用日志 存储引擎层日志：innodb(重做日志、回滚日志)  其中比较重要的就是服务器层的二进制日志，其中记录了所有对mysql数据库的修改事件，包括增删改查事件和对表结构的修改事件。要注意的一点是，只有成功执行了的事件才会记录在二进制日志中，未执行成功的不会保存在二">
+<meta property="og:updated_time" content="2017-07-13T12:35:05.459Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL二进制日志格式类型详解">
+<meta name="twitter:description" content="mysql很多有类型的日志，按照组件划分的话，可以分为 服务层日志 和  存储引擎层日志 ：  服务层日志：二进制日志、慢查日志、通用日志 存储引擎层日志：innodb(重做日志、回滚日志)  其中比较重要的就是服务器层的二进制日志，其中记录了所有对mysql数据库的修改事件，包括增删改查事件和对表结构的修改事件。要注意的一点是，只有成功执行了的事件才会记录在二进制日志中，未执行成功的不会保存在二">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/"/>
+
+
+
+
+
+  <title>MySQL二进制日志格式类型详解 | l.s</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">l.s</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">论装逼我只服你</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="l.s">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL二进制日志格式类型详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T20:33:38+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-13T20:35:05+08:00">
+                2017-07-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/13/MySQL二进制日志格式类型详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/13/MySQL二进制日志格式类型详解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>mysql很多有类型的日志，按照组件划分的话，可以分为<strong> 服务层日志 </strong>和 <strong> 存储引擎层日志 </strong>：</p>
 <ul>
 <li>服务层日志：二进制日志、慢查日志、通用日志</li>
 <li>存储引擎层日志：innodb(重做日志、回滚日志)</li>
@@ -89,193 +477,479 @@
 </ul>
 <hr>
 <p><strong> 总结：在选择二进制日志格式时，通常选择基于行或者混合日志格式。然而对于数据复制安全性要求高的情况下，更建议使用基于行的日志格式。另外，如果选择这种格式，务必设置binlog_row_image=minimal</strong></p>
-]]></content>
+
       
-        <categories>
-            
-            <category> mysql </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> mysql </tag>
-            
-            <tag> 二进制日志，binlog </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[functools.lru_cache装饰器详解]]></title>
-      <url>/2017/07/11/functools-lru-cache%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/</url>
-      <content type="html"><![CDATA[<p>在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。</p>
-<p>举fluent python中的例子来说：<br>首先实现一个计算运行时间的装饰器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import time</div><div class="line">import functools</div><div class="line"></div><div class="line">def clock(func):</div><div class="line"></div><div class="line">	# functools.wraps(func)装饰器的作用是将func函数的相关属性复制到clock中</div><div class="line">    # 比如说__name__, __doc__等等</div><div class="line">    @functools.wraps(func)</div><div class="line">    def clocked(*args, **kwargs):</div><div class="line">        t0 = time.time()</div><div class="line">        result = func(*args, **kwargs)</div><div class="line">        elapsed = time.time() - t0</div><div class="line">        name = func.__name__</div><div class="line">        arg_lst = []</div><div class="line">        if args:</div><div class="line">        	arg_lst.append(&apos;, &apos;.join(repr(arg) for arg in args))</div><div class="line">        if kwargs:</div><div class="line">        	pairs = [&apos;%s=%r&apos; % (k, w) for k, w in sorted(kwargs.items())]</div><div class="line">        	arg_lst.append(&apos;, &apos;.join(pairs))</div><div class="line">        arg_str = &apos;, &apos;.join(arg_lst)</div><div class="line">        print(&apos;[%0.8fs] %s(%s) -&gt; %r &apos; % (elapsed, name, arg_str, result))</div><div class="line">    return result</div></pre></td></tr></table></figure></p>
-<p>接下来写一个生成第n个斐波纳契数的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">from clockdeco import clock</div><div class="line"></div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div><div class="line"></div><div class="line">if __name__==&apos;__main__&apos;:</div><div class="line">	print(fibonacci(6))</div></pre></td></tr></table></figure></p>
-<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[0.00000041s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000051s] fibonacci(1) -&gt; 1</div><div class="line">[0.00003454s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000025s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000026s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000024s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000743s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001429s] fibonacci(3) -&gt; 2</div><div class="line">[0.00005602s] fibonacci(4) -&gt; 3</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000023s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000021s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000672s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001346s] fibonacci(3) -&gt; 2</div><div class="line">[0.00000021s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000691s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000027s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000022s] fibonacci(1) -&gt; 1</div><div class="line">[0.00000708s] fibonacci(2) -&gt; 1</div><div class="line">[0.00001363s] fibonacci(3) -&gt; 2</div><div class="line">[0.00002687s] fibonacci(4) -&gt; 3</div><div class="line">[0.00004682s] fibonacci(5) -&gt; 5</div><div class="line">[0.00011096s] fibonacci(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure></p>
-<p>有大量的重复函数计算在整个运行过程中，比如fibonacci(1)，fibonacci(2)就分别运行了多次。<br>现在给fibonacci()函数加上@functools.lru_cache()装饰器进行缓存实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">from clockdeco import clock</div><div class="line"></div><div class="line">@functools.lru_cache()</div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div><div class="line"></div><div class="line">if __name__==&apos;__main__&apos;:</div><div class="line">	print(fibonacci(6))</div></pre></td></tr></table></figure></p>
-<p>一共就多了一行代码，那看看运行结果如何。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[0.00000041s] fibonacci(0) -&gt; 0</div><div class="line">[0.00000054s] fibonacci(1) -&gt; 1</div><div class="line">[0.00004040s] fibonacci(2) -&gt; 1</div><div class="line">[0.00000104s] fibonacci(3) -&gt; 2</div><div class="line">[0.00005465s] fibonacci(4) -&gt; 3</div><div class="line">[0.00000072s] fibonacci(5) -&gt; 5</div><div class="line">[0.00006876s] fibonacci(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure></p>
-<p>不使用lru_cache装饰器时的运行时间是0.00011096s，加上以后变成了0.00006876s。这个效率增加的杠杆的，尤其在充斥这大量重复计算时，它更能够为程序的运行节省大量的时间。</p>
-<p>另外：functools.lru_cache(maxsize=128, typed=False)有两个可选参数，我们来看看他们分别代表的意义。</p>
-<p><strong> maxsize代表缓存的内存占用值，超过这个值之后，就的结果就会被释放，然后将新的计算结果进行缓存,其值应当设为2的幂 </strong></p>
-<p><strong> typed若为True，则会把不同的参数类型得到的结果分开保存 </strong></p>
-<p>ps：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@functools.lru_cache()</div><div class="line">@clock</div><div class="line">def fibonacci(n):</div><div class="line">	if n &lt; 2:</div><div class="line">		return n</div><div class="line">	return fibonacci(n-2) + fibonacci(n-1)</div></pre></td></tr></table></figure></p>
-<p>这段代码中叠加使用了两个装饰器，那具体这两个装饰器的先后顺序是怎么样的。<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@d1</div><div class="line">@d2</div><div class="line">def f():</div><div class="line">	print(&apos;f&apos;)</div></pre></td></tr></table></figure></p>
-<p>等于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def f():</div><div class="line">	print(&apos;f&apos;)</div><div class="line"></div><div class="line">f = d1(d2(f))</div></pre></td></tr></table></figure></p>
-<p>也就是说从下往上依次执行</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> 装饰器，functools </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Scrapy架构简述]]></title>
-      <url>/2017/07/05/Scrapy%E6%9E%B6%E6%9E%84%E7%AE%80%E8%BF%B0/</url>
-      <content type="html"><![CDATA[<p>瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。<br><img src="https://ooo.0o0.ooo/2017/07/04/595b0613922a8.png" alt="scrapy_architecture_02.png"></p>
-<hr>
-<p>第一眼看过去，有点蒙逼是正常的，接着往下看看就会会理解了。<br>先了解了解每个组件是做什么的：</p>
-<p><strong> Spiders(爬虫类): Spiders是开发者自定义的一个类，用于解析相应并提取item或下个爬取的URL </strong></p>
-<p><strong> Scrapy Engine(引擎): Engine负责控制数据流在系统中的流动走向，并在指定条件下触发一些事件。同时，也可以简单理解为Scrapy中数据流的中转站 </strong></p>
-<p><strong> Scheduler(调度器): Scheduler接收Engine发出的requests，并将这些requests放入到处理队列中，以便之后Engine需要时再提供 </strong></p>
-<p><strong> Downloader(下载器):  Downloader负责抓取网页信息并提供给Engine，进而转发至Spider </strong></p>
-<p><strong> Item Pipeline(处理管道): Item Pipeline负责处理Spiders类处理提取之后的item，典型的处理有数据清洗，验证以及持久化 </strong></p>
-<hr>
-<p>下面需要在介绍一下架构中存在的两种中间件</p>
-<p><strong> Spider middlewares: Spider中间件作为Spider和Engine中间存在的特定钩子，处理Engine返回的responses和自身向Engine输出的requests、items </strong></p>
-<p><strong> Downloader middlewares: Downloader中间件作为Engine和Downloader中间存在的特定钩子，处理从Engine发出的requests和自身向Engine返回的responses </strong></p>
-<p>在后期的讲解中，会慢慢涉及中间件的开发，并利用中间件方便的完成许多功能</p>
-<hr>
-<p>重点讲解一下整个架构的数据流的流通过程(看图理解)：</p>
-<p><strong> 1. Engine从Spider获取到第一条Requests </strong></p>
-<p><strong> 2. Engine将这条Requests发送至Scheduler,然后从Spider准备接收下一条Requests </strong></p>
-<p><strong> 3. Schedulers取出队列中的一条Requests发送给Engine </strong></p>
-<p><strong> 4. Engine 将接收到的Requests发送至Downloader，这个过程Requests会经过Downloader Middlewares </strong></p>
-<p><strong> 5. 一旦页面完成下载，Downloader会成为一个Response，然后将它发送至Engine，这个发送过程也会经过Downloader Middlewares </strong></p>
-<p><strong> 6. Engine接收到Response后，将它发送至Spider进行处理，会经过Spider Middlewares </strong></p>
-<p><strong> 7. Spider处理完Response然后返回items和新的Requests至Engine，会经过Spider Middlewares </strong></p>
-<p><strong> 8. Engine将接收到的Item发送至Item Pipelines，然后将Requests发送至Scheduler并准备接收下一条需要爬取的Requests </strong></p>
-<p><strong> 9. 一次url的爬取过程结束了，然后会重复这个爬取过程，直到Schedueler中没有Requests需要处理。 </strong></p>
-<hr>
-<p>通过这篇文章的阅读，可以大概了解Scrapy框架基本构成及数据流的走向。对后续Scrapy的学习会有非常大的帮助，同时为进阶的Scrapy学习及源码的剖析打下基础。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 爬虫 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 爬虫 </tag>
-            
-            <tag> 框架 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[红绿灯下的思考]]></title>
-      <url>/2017/06/10/%E7%BA%A2%E7%BB%BF%E7%81%AF%E4%B8%8B%E7%9A%84%E6%80%9D%E8%80%83/</url>
-      <content type="html"><![CDATA[<p>今晚从健身房回家的时候，经过红绿灯时，正好红灯，停下了脚步。</p>
-<p>突然意识到自己这日复一日的在人潮中涌动，在整条街中，在整个城市的灯光下，显得极为平凡，渺小。这一生，也许真的就只能是一个平凡的人，和千千万万的上班族一样为了生活奔波劳碌，来不及思考未来，来不及为真理的探索再迈近一步。</p>
-<p>大学里所幻想未来的天马星空好像突然间没有了音讯，此时此刻想起那些曾经憧憬，看起来更像是无知的意淫。然而，理想还是要有的，万一真的实现了呢。</p>
-<p>希望自己再今后的生活中，不被现实的压力所打倒，不被灯红酒绿所迷惑，勿忘初心，继续前行。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 杂谈 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 思考，感悟 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[byebye-csdn]]></title>
-      <url>/2017/05/27/byebye-csdn/</url>
-      <content type="html"><![CDATA[<p>鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。</p>
-<p>原CSDN博客不再做更新，仍能访问，地址见站点概览。</p>
-<p>最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!<br>ps:赠桌面一张<br><img src="https://ooo.0o0.ooo/2017/05/27/5929919aa66d3.jpg" alt="desktop.jpg"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 杂谈 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 碎碎念 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/2017/05/25/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    </div>
+
+    <div>
       
         
-    </entry>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.JPG" alt="Lee WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.JPG" alt="Lee Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/二进制日志，binlog/" rel="tag"># 二进制日志，binlog</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/11/functools-lru-cache装饰器详解/" rel="next" title="functools.lru_cache装饰器详解">
+                <i class="fa fa-chevron-left"></i> functools.lru_cache装饰器详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Lee" />
+          <p class="site-author-name" itemprop="name">Lee</p>
+           
+              <p class="site-description motion-element" itemprop="description">No bb, show me your code!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wzqnls" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/wzqnls" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-truck"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/li-shuo-1-31/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-bookmark"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制日志的格式："><span class="nav-number">1.</span> <span class="nav-text">二进制日志的格式：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-fighter-jet"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lee</span>
+</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4.9k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
   
   
-    
-    <entry>
-      <title><![CDATA[关于李老师的博客]]></title>
-      <url>/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[文章分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[文章标签]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
   
-</search>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://lee.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/';
+          this.page.identifier = '2017/07/13/MySQL二进制日志格式类型详解/';
+          this.page.title = 'MySQL二进制日志格式类型详解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lee.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
