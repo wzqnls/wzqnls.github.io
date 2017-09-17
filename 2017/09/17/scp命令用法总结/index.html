@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,scp," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。 命令参数在服务器上键入：1scp --help 输出：123usage: s">
+<meta name="keywords" content="linux,scp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/05/25/hello-world/index.html">
+<meta property="og:title" content="scp命令用法总结">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/scp命令用法总结/index.html">
 <meta property="og:site_name" content="l.s">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-25T10:49:45.293Z">
+<meta property="og:description" content="在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。 命令参数在服务器上键入：1scp --help 输出：123usage: s">
+<meta property="og:updated_time" content="2017-09-17T05:53:44.463Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="scp命令用法总结">
+<meta name="twitter:description" content="在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。 命令参数在服务器上键入：1scp --help 输出：123usage: s">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/25/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/17/scp命令用法总结/"/>
 
 
 
 
 
-  <title>Hello World | l.s</title>
+  <title>scp命令用法总结 | l.s</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -283,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/scp命令用法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lee">
@@ -300,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">scp命令用法总结</h1>
         
 
         <div class="post-meta">
@@ -312,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T13:05:20+08:00">
+                2017-09-17
               </time>
             
 
@@ -328,12 +329,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-17T13:53:44+08:00">
+                2017-09-17
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -343,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/25/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/17/scp命令用法总结/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/25/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/17/scp命令用法总结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,16 +393,27 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <p>在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。</p>
+<h3 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h3><p>在服务器上键入：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp <span class="comment">--help</span></div></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">usage: scp <span class="comment">[-12346BCpqrv]</span> <span class="comment">[-c cipher]</span> <span class="comment">[-F ssh_config]</span> <span class="comment">[-i identity_file]</span></div><div class="line">           <span class="comment">[-l limit]</span> <span class="comment">[-o ssh_option]</span> <span class="comment">[-P port]</span> <span class="comment">[-S program]</span></div><div class="line">           <span class="comment">[<span class="comment">[user@]</span>host1:]</span>file1 ... <span class="comment">[<span class="comment">[user@]</span>host2:]</span>file2</div></pre></td></tr></table></figure></p>
+<p>这就是scp命令的一个命令格式，针对每个参数的详细意义可以通过 man scp命令进行查阅，这里不多做赘述。</p>
+<hr>
+<h3 id="常用命令格式"><a href="#常用命令格式" class="headerlink" title="常用命令格式"></a>常用命令格式</h3><p><b></b></p>
+<ol>
+<li>scp local_file remote_username@remote_ip:remote_folder</li>
+<li>scp local_file remote_username@remote_ip:remote_folder/remote_file</li>
+<li>scp local_file remote_ip:remote_folder</li>
+<li>scp local_file remote_ip:remote_folder/remote_file</li>
+</ol>
+<p>local_file:本地文件 (绝对路径或相对路径皆可)</p>
+<p>remote_username:远程服务器用户名 </p>
+<p>remote_ip:远程服务器ip</p>
+<p>remote_file：远程服务器目标文件名（绝对路径）<br></p>
+<h4 id="本地-lt-gt-远程复制"><a href="#本地-lt-gt-远程复制" class="headerlink" title="本地&lt;-&gt;远程复制"></a>本地&lt;-&gt;远程复制</h4><p>举例：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从本地复制到远程</span></div><div class="line">scp test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div><div class="line">scp test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test/test</span>.txt</div><div class="line">scp test.txt <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test</span></div><div class="line">scp test.txt <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test/test</span>.txt</div><div class="line"></div><div class="line"><span class="comment"># 从远程复制到本地(仅仅是路径参数调换下位置)</span></div><div class="line">scp jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span> text.txt</div><div class="line">scp jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test/test</span>.txt test.txt</div><div class="line">scp <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test</span> test.txt</div><div class="line">scp <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test/test</span>.txt test.txt</div></pre></td></tr></table></figure></p>
+<p>1， 2方式需要继续键入服务器登录密码<br>3， 4方式需要键入服务器用户名和密码</p>
+<h4 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加参数 -r即可，大多参数的函数与cp命令中参数含义相同</span></div><div class="line">scp -r /test jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div></pre></td></tr></table></figure>
+<h4 id="修改远程服务器ssh端口"><a href="#修改远程服务器ssh端口" class="headerlink" title="修改远程服务器ssh端口"></a>修改远程服务器ssh端口</h4><p>在某些情况下，公司为了加强ssh通信的安全性，会对服务器的ssh默认端口22进行修改。然而，上面的命令中并没有涉及到端口的修改。下面就看看这种情况怎么处理。其实，scp早就设定了某个参数为实现自定义端口，没错就是 -P （<b>大写的P</b>）。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -P &lt;port&gt; test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div></pre></td></tr></table></figure></p>
+<h4 id="添加ssh公钥进行免密传输"><a href="#添加ssh公钥进行免密传输" class="headerlink" title="添加ssh公钥进行免密传输"></a>添加ssh公钥进行免密传输</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地生成ssh密钥</span></div><div class="line"><span class="comment"># 将公钥添加至远程主机的authorized_keys中</span></div><div class="line"><span class="comment"># 1.手动复制公钥至authorized_keys中</span></div><div class="line"><span class="comment"># 2.直接将本地公钥复制到远程服务器相应目录下的authorized_keys中</span></div><div class="line">scp ~<span class="regexp">/.ssh/id</span>_rsa.pub <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/root/</span>.ssh/authorized_keys</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -427,6 +461,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/scp/" rel="tag"># scp</a>
+          
+        </div>
+      
 
       
         
@@ -436,15 +478,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/14/谈谈对测试驱动开发思想的体会/" rel="next" title="谈谈对测试驱动开发思想的体会">
+                <i class="fa fa-chevron-left"></i> 谈谈对测试驱动开发思想的体会
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/27/byebye-csdn/" rel="prev" title="byebye-csdn">
-                byebye-csdn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令参数"><span class="nav-number">1.</span> <span class="nav-text">命令参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令格式"><span class="nav-number">2.</span> <span class="nav-text">常用命令格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地-lt-gt-远程复制"><span class="nav-number">2.1.</span> <span class="nav-text">本地<->远程复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制目录"><span class="nav-number">2.2.</span> <span class="nav-text">复制目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改远程服务器ssh端口"><span class="nav-number">2.3.</span> <span class="nav-text">修改远程服务器ssh端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加ssh公钥进行免密传输"><span class="nav-number">2.4.</span> <span class="nav-text">添加ssh公钥进行免密传输</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -777,9 +819,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/25/hello-world/';
-          this.page.identifier = '2017/05/25/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2017/09/17/scp命令用法总结/';
+          this.page.identifier = '2017/09/17/scp命令用法总结/';
+          this.page.title = 'scp命令用法总结';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://lee.disqus.com/embed.js';

@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[scp命令用法总结]]></title>
+      <url>/2017/09/17/scp%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。</p>
+<h3 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h3><p>在服务器上键入：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp <span class="comment">--help</span></div></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">usage: scp <span class="comment">[-12346BCpqrv]</span> <span class="comment">[-c cipher]</span> <span class="comment">[-F ssh_config]</span> <span class="comment">[-i identity_file]</span></div><div class="line">           <span class="comment">[-l limit]</span> <span class="comment">[-o ssh_option]</span> <span class="comment">[-P port]</span> <span class="comment">[-S program]</span></div><div class="line">           <span class="comment">[<span class="comment">[user@]</span>host1:]</span>file1 ... <span class="comment">[<span class="comment">[user@]</span>host2:]</span>file2</div></pre></td></tr></table></figure></p>
+<p>这就是scp命令的一个命令格式，针对每个参数的详细意义可以通过 man scp命令进行查阅，这里不多做赘述。</p>
+<hr>
+<h3 id="常用命令格式"><a href="#常用命令格式" class="headerlink" title="常用命令格式"></a>常用命令格式</h3><p><b></b></p>
+<ol>
+<li>scp local_file remote_username@remote_ip:remote_folder</li>
+<li>scp local_file remote_username@remote_ip:remote_folder/remote_file</li>
+<li>scp local_file remote_ip:remote_folder</li>
+<li>scp local_file remote_ip:remote_folder/remote_file</li>
+</ol>
+<p>local_file:本地文件 (绝对路径或相对路径皆可)</p>
+<p>remote_username:远程服务器用户名 </p>
+<p>remote_ip:远程服务器ip</p>
+<p>remote_file：远程服务器目标文件名（绝对路径）<br></p>
+<h4 id="本地-lt-gt-远程复制"><a href="#本地-lt-gt-远程复制" class="headerlink" title="本地&lt;-&gt;远程复制"></a>本地&lt;-&gt;远程复制</h4><p>举例：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 从本地复制到远程</span></div><div class="line">scp test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div><div class="line">scp test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test/test</span>.txt</div><div class="line">scp test.txt <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test</span></div><div class="line">scp test.txt <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test/test</span>.txt</div><div class="line"></div><div class="line"><span class="comment"># 从远程复制到本地(仅仅是路径参数调换下位置)</span></div><div class="line">scp jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span> text.txt</div><div class="line">scp jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test/test</span>.txt test.txt</div><div class="line">scp <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test</span> test.txt</div><div class="line">scp <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/home/jack/test/test</span>.txt test.txt</div></pre></td></tr></table></figure></p>
+<p>1， 2方式需要继续键入服务器登录密码<br>3， 4方式需要键入服务器用户名和密码</p>
+<h4 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加参数 -r即可，大多参数的函数与cp命令中参数含义相同</span></div><div class="line">scp -r /test jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div></pre></td></tr></table></figure>
+<h4 id="修改远程服务器ssh端口"><a href="#修改远程服务器ssh端口" class="headerlink" title="修改远程服务器ssh端口"></a>修改远程服务器ssh端口</h4><p>在某些情况下，公司为了加强ssh通信的安全性，会对服务器的ssh默认端口22进行修改。然而，上面的命令中并没有涉及到端口的修改。下面就看看这种情况怎么处理。其实，scp早就设定了某个参数为实现自定义端口，没错就是 -P （<b>大写的P</b>）。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -P &lt;port&gt; test.txt jack<span class="variable">@192</span>.<span class="number">168.1</span>.<span class="number">198</span><span class="symbol">:/home/jack/test</span></div></pre></td></tr></table></figure></p>
+<h4 id="添加ssh公钥进行免密传输"><a href="#添加ssh公钥进行免密传输" class="headerlink" title="添加ssh公钥进行免密传输"></a>添加ssh公钥进行免密传输</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地生成ssh密钥</span></div><div class="line"><span class="comment"># 将公钥添加至远程主机的authorized_keys中</span></div><div class="line"><span class="comment"># 1.手动复制公钥至authorized_keys中</span></div><div class="line"><span class="comment"># 2.直接将本地公钥复制到远程服务器相应目录下的authorized_keys中</span></div><div class="line">scp ~<span class="regexp">/.ssh/id</span>_rsa.pub <span class="number">192.168</span>.<span class="number">1.198</span><span class="symbol">:/root/</span>.ssh/authorized_keys</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> scp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[谈谈对测试驱动开发思想的体会]]></title>
       <url>/2017/09/14/%E8%B0%88%E8%B0%88%E5%AF%B9%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%80%9D%E6%83%B3%E7%9A%84%E4%BD%93%E4%BC%9A/</url>
       <content type="html"><![CDATA[<p>最近学习了一本书《Python Web开发：测试驱动方法》，贯穿全书的便是测试驱动开发的编程思想。有点儿兵马未动，粮草先行的兵家思想。先简单总结一下这本书带给我的收获：1.学习了测试驱动开发的一种编程思想，与传统的瀑布开发流程又很大的出入。2.学习了如何写好功能测试，如何写好单元测试。3.先通过测试，再谈重构。</p>
