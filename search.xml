@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title><![CDATA[jenkins解决构建完成后自动杀掉衍生进程]]></title>
+      <url>/2017/09/28/jenkins%E8%A7%A3%E5%86%B3%E6%9E%84%E5%BB%BA%E5%AE%8C%E6%88%90%E5%90%8E%E8%87%AA%E5%8A%A8%E6%9D%80%E6%8E%89%E8%A1%8D%E7%94%9F%E8%BF%9B%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="java启动war包解决方式"><a href="#java启动war包解决方式" class="headerlink" title="java启动war包解决方式"></a>java启动war包解决方式</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加启动参数 -Dhudson.util.ProcessTree.disable=true</span></div><div class="line"><span class="keyword">java </span>-Dhudson.util.ProcessTree.<span class="keyword">disable=true </span>-<span class="keyword">jar </span><span class="keyword">jenkins.war</span></div></pre></td></tr></table></figure>
+<h3 id="修改BUILD-ID"><a href="#修改BUILD-ID" class="headerlink" title="修改BUILD_ID"></a>修改BUILD_ID</h3><p><strong> 原理：jenkins默认会在构建完成后杀掉构建过程中又jenkins中shell命令触发的衍生进程。jenkins根据BUILD_ID识别某个进程是否为构建过程的衍生进程，故修改BUILD_ID后，jenkins就无法识别是否为衍生进程，则此进程能在后台保留运行</strong></p>
+<h4 id="1-在execute-shell中加入BUILD-ID-DONTKILLME"><a href="#1-在execute-shell中加入BUILD-ID-DONTKILLME" class="headerlink" title="1.在execute shell中加入BUILD_ID=DONTKILLME"></a>1.在execute shell中加入BUILD_ID=DONTKILLME</h4><p><strong> DONTKILLME仅仅为增加可读性，则任意修改其他 </strong></p>
+<p><strong> 在想保留的进程启动命令前加入这一行 </strong><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 举例如下</span></div><div class="line">BUILD_ID=DONTKILLME</div><div class="line">sh /home/bob/restart.sh</div></pre></td></tr></table></figure></p>
+<h4 id="2-临时改变BUILD-ID值"><a href="#2-临时改变BUILD-ID值" class="headerlink" title="2.临时改变BUILD_ID值"></a>2.临时改变BUILD_ID值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">OLD_BUILD_ID=<span class="variable">$BUILD_ID</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$OLD_BUILD_ID</span></div><div class="line">BUILD_ID=dontKillMe</div><div class="line"></div><div class="line"><span class="comment">#此处放入shell脚本或者shell命令</span></div><div class="line"></div><div class="line">BUILD_ID=<span class="variable">$OLD_BUILD_ID</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$BUILD_ID</span></div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 运维 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Jenkins </tag>
+            
+            <tag> CI </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[以root用户运行jenkins中shell命令]]></title>
       <url>/2017/09/28/%E4%BB%A5root%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8Cjenkins%E4%B8%ADshell%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>以centOS系统为例，记录下修改Jenkins以root用户运行的方法。</p>
@@ -19,7 +46,9 @@
         
         <tags>
             
-            <tag> Jenkins， CI </tag>
+            <tag> Jenkins </tag>
+            
+            <tag> CI </tag>
             
         </tags>
         

@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Jenkins,CI," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="java启动war包解决方式12# 添加启动参数 -Dhudson.util.ProcessTree.disable=truejava -Dhudson.util.ProcessTree.disable=true -jar jenkins.war 修改BUILD_ID 原理：jenkins默认会在构建完成后杀掉构建过程中又jenkins中shell命令触发的衍生进程。jenkins根据BUILD_">
+<meta name="keywords" content="Jenkins,CI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/05/25/hello-world/index.html">
+<meta property="og:title" content="jenkins解决构建完成后自动杀掉衍生进程">
+<meta property="og:url" content="http://yoursite.com/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/index.html">
 <meta property="og:site_name" content="l.s">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-25T10:49:45.293Z">
+<meta property="og:description" content="java启动war包解决方式12# 添加启动参数 -Dhudson.util.ProcessTree.disable=truejava -Dhudson.util.ProcessTree.disable=true -jar jenkins.war 修改BUILD_ID 原理：jenkins默认会在构建完成后杀掉构建过程中又jenkins中shell命令触发的衍生进程。jenkins根据BUILD_">
+<meta property="og:updated_time" content="2017-09-28T14:01:09.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="jenkins解决构建完成后自动杀掉衍生进程">
+<meta name="twitter:description" content="java启动war包解决方式12# 添加启动参数 -Dhudson.util.ProcessTree.disable=truejava -Dhudson.util.ProcessTree.disable=true -jar jenkins.war 修改BUILD_ID 原理：jenkins默认会在构建完成后杀掉构建过程中又jenkins中shell命令触发的衍生进程。jenkins根据BUILD_">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/25/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/"/>
 
 
 
 
 
-  <title>Hello World | l.s</title>
+  <title>jenkins解决构建完成后自动杀掉衍生进程 | l.s</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -283,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lee">
@@ -300,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">jenkins解决构建完成后自动杀掉衍生进程</h1>
         
 
         <div class="post-meta">
@@ -312,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T21:27:10+08:00">
+                2017-09-28
               </time>
             
 
@@ -328,12 +329,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-05-25T18:49:45+08:00">
-                2017-05-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-28T22:01:09+08:00">
+                2017-09-28
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/运维/" itemprop="url" rel="index">
+                    <span itemprop="name">运维</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -343,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/25/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/25/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,15 +393,11 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="java启动war包解决方式"><a href="#java启动war包解决方式" class="headerlink" title="java启动war包解决方式"></a>java启动war包解决方式</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加启动参数 -Dhudson.util.ProcessTree.disable=true</span></div><div class="line"><span class="keyword">java </span>-Dhudson.util.ProcessTree.<span class="keyword">disable=true </span>-<span class="keyword">jar </span><span class="keyword">jenkins.war</span></div></pre></td></tr></table></figure>
+<h3 id="修改BUILD-ID"><a href="#修改BUILD-ID" class="headerlink" title="修改BUILD_ID"></a>修改BUILD_ID</h3><p><strong> 原理：jenkins默认会在构建完成后杀掉构建过程中又jenkins中shell命令触发的衍生进程。jenkins根据BUILD_ID识别某个进程是否为构建过程的衍生进程，故修改BUILD_ID后，jenkins就无法识别是否为衍生进程，则此进程能在后台保留运行</strong></p>
+<h4 id="1-在execute-shell中加入BUILD-ID-DONTKILLME"><a href="#1-在execute-shell中加入BUILD-ID-DONTKILLME" class="headerlink" title="1.在execute shell中加入BUILD_ID=DONTKILLME"></a>1.在execute shell中加入BUILD_ID=DONTKILLME</h4><p><strong> DONTKILLME仅仅为增加可读性，则任意修改其他 </strong></p>
+<p><strong> 在想保留的进程启动命令前加入这一行 </strong><br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 举例如下</span></div><div class="line">BUILD_ID=DONTKILLME</div><div class="line">sh /home/bob/restart.sh</div></pre></td></tr></table></figure></p>
+<h4 id="2-临时改变BUILD-ID值"><a href="#2-临时改变BUILD-ID值" class="headerlink" title="2.临时改变BUILD_ID值"></a>2.临时改变BUILD_ID值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">OLD_BUILD_ID=<span class="variable">$BUILD_ID</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$OLD_BUILD_ID</span></div><div class="line">BUILD_ID=dontKillMe</div><div class="line"></div><div class="line"><span class="comment">#此处放入shell脚本或者shell命令</span></div><div class="line"></div><div class="line">BUILD_ID=<span class="variable">$OLD_BUILD_ID</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$BUILD_ID</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -427,6 +446,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Jenkins/" rel="tag"># Jenkins</a>
+          
+            <a href="/tags/CI/" rel="tag"># CI</a>
+          
+        </div>
+      
 
       
         
@@ -436,15 +463,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/28/以root用户运行jenkins中shell命令/" rel="next" title="以root用户运行jenkins中shell命令">
+                <i class="fa fa-chevron-left"></i> 以root用户运行jenkins中shell命令
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/27/byebye-csdn/" rel="prev" title="byebye-csdn">
-                byebye-csdn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java启动war包解决方式"><span class="nav-number">1.</span> <span class="nav-text">java启动war包解决方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改BUILD-ID"><span class="nav-number">2.</span> <span class="nav-text">修改BUILD_ID</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在execute-shell中加入BUILD-ID-DONTKILLME"><span class="nav-number">2.1.</span> <span class="nav-text">1.在execute shell中加入BUILD_ID=DONTKILLME</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-临时改变BUILD-ID值"><span class="nav-number">2.2.</span> <span class="nav-text">2.临时改变BUILD_ID值</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -777,9 +804,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/05/25/hello-world/';
-          this.page.identifier = '2017/05/25/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/';
+          this.page.identifier = '2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/';
+          this.page.title = 'jenkins解决构建完成后自动杀掉衍生进程';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://lee.disqus.com/embed.js';
