@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[以root用户运行jenkins中shell命令]]></title>
+      <url>/2017/09/28/%E4%BB%A5root%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8Cjenkins%E4%B8%ADshell%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>以centOS系统为例，记录下修改Jenkins以root用户运行的方法。</p>
+<h3 id="修改Jenkins配置文件"><a href="#修改Jenkins配置文件" class="headerlink" title="修改Jenkins配置文件"></a>修改Jenkins配置文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 打开配置文件</span></div><div class="line">vim /etc/sysconfig/jenkins</div><div class="line"><span class="meta">#</span><span class="bash"> 修改<span class="variable">$JENKINS_USER</span>，并去掉当前行注释</span></div><div class="line"><span class="meta">$</span><span class="bash">JENKINS_USER=<span class="string">"root"</span></span></div></pre></td></tr></table></figure>
+<h3 id="修改Jenkins相关文件夹用户权限"><a href="#修改Jenkins相关文件夹用户权限" class="headerlink" title="修改Jenkins相关文件夹用户权限"></a>修改Jenkins相关文件夹用户权限</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chown -R <span class="symbol">root:</span>root /var/<span class="class"><span class="keyword">lib</span>/<span class="title">jenkins</span></span></div><div class="line">chown -R <span class="symbol">root:</span>root /var/cache/jenkins</div><div class="line">chown -R <span class="symbol">root:</span>root /var/log/jenkins</div></pre></td></tr></table></figure>
+<h3 id="重启Jenkins服务并检查运行Jenkins的用户是否已经切换为root"><a href="#重启Jenkins服务并检查运行Jenkins的用户是否已经切换为root" class="headerlink" title="重启Jenkins服务并检查运行Jenkins的用户是否已经切换为root"></a>重启Jenkins服务并检查运行Jenkins的用户是否已经切换为root</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 重启Jenkins（若是其他方式安装的jenkins则重启方式略不同）</span></div><div class="line">service jenkins restart</div><div class="line"><span class="meta">#</span><span class="bash"> 查看Jenkins进程所属用户</span></div><div class="line">ps -ef | grep jenkins</div><div class="line"><span class="meta">#</span><span class="bash"> 若显示为root用户，则表示修改完成</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> 运维 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Jenkins， CI </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[scp命令用法总结]]></title>
       <url>/2017/09/17/scp%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<p>在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方便以后日后查阅，也为有需要的小伙伴提供一丝帮助。</p>
