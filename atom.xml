@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Thread Pool</title>
+  
+  <subtitle>Hello World</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-09-28T14:01:10.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>wzqnls</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jenkins解决构建完成后自动杀掉衍生进程</title>
+    <link href="http://yoursite.com/2017/09/28/jenkins%E8%A7%A3%E5%86%B3%E6%9E%84%E5%BB%BA%E5%AE%8C%E6%88%90%E5%90%8E%E8%87%AA%E5%8A%A8%E6%9D%80%E6%8E%89%E8%A1%8D%E7%94%9F%E8%BF%9B%E7%A8%8B/"/>
+    <id>http://yoursite.com/2017/09/28/jenkins解决构建完成后自动杀掉衍生进程/</id>
+    <published>2017-09-28T13:27:10.000Z</published>
+    <updated>2017-09-28T14:01:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;java启动war包解决方式&quot;&gt;&lt;a href=&quot;#java启动war包解决方式&quot; class=&quot;headerlink&quot; title=&quot;java启动war包解决方式&quot;&gt;&lt;/a&gt;java启动war包解决方式&lt;/h3&gt;&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="Jenkins" scheme="http://yoursite.com/tags/Jenkins/"/>
+    
+      <category term="CI" scheme="http://yoursite.com/tags/CI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>以root用户运行jenkins中shell命令</title>
+    <link href="http://yoursite.com/2017/09/28/%E4%BB%A5root%E7%94%A8%E6%88%B7%E8%BF%90%E8%A1%8Cjenkins%E4%B8%ADshell%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/09/28/以root用户运行jenkins中shell命令/</id>
+    <published>2017-09-28T13:10:13.000Z</published>
+    <updated>2017-09-28T13:46:36.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以centOS系统为例，记录下修改Jenkins以root用户运行的方法。&lt;/p&gt;
+&lt;h3 id=&quot;修改Jenkins配置文件&quot;&gt;&lt;a href=&quot;#修改Jenkins配置文件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="Jenkins" scheme="http://yoursite.com/tags/Jenkins/"/>
+    
+      <category term="CI" scheme="http://yoursite.com/tags/CI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scp命令用法总结</title>
+    <link href="http://yoursite.com/2017/09/17/scp%E5%91%BD%E4%BB%A4%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/09/17/scp命令用法总结/</id>
+    <published>2017-09-17T05:05:20.000Z</published>
+    <updated>2017-09-17T05:53:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在linux环境下做本机的文件复制，可以使用cp命令进行操作。然而，本地服务器和远程服务器要做文件的传输复制时，cp命令就显得心有余而力不足了。这时，就引出了一个新的命令：scp。在学习这个命令之后，感受到了这个命令的强大之处。下面就将scp命令的几种常用的用法总结一下，方
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="scp" scheme="http://yoursite.com/tags/scp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈对测试驱动开发思想的体会</title>
+    <link href="http://yoursite.com/2017/09/14/%E8%B0%88%E8%B0%88%E5%AF%B9%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%80%9D%E6%83%B3%E7%9A%84%E4%BD%93%E4%BC%9A/"/>
+    <id>http://yoursite.com/2017/09/14/谈谈对测试驱动开发思想的体会/</id>
+    <published>2017-09-14T13:43:38.000Z</published>
+    <updated>2017-09-14T14:17:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近学习了一本书《Python
+        
+      
+    
+    </summary>
+    
+      <category term="编程思想" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL二进制日志格式类型详解</title>
+    <link href="http://yoursite.com/2017/07/13/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%E6%A0%BC%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/</id>
+    <published>2017-07-13T12:33:38.000Z</published>
+    <updated>2017-07-13T12:48:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;mysql很多有类型的日志，按照组件划分的话，可以分为&lt;strong&gt; 服务层日志 &lt;/strong&gt;和 &lt;strong&gt; 存储引擎层日志
+        
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://yoursite.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="二进制日志，binlog" scheme="http://yoursite.com/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%EF%BC%8Cbinlog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>functools.lru_cache装饰器详解</title>
+    <link href="http://yoursite.com/2017/07/11/functools-lru-cache%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://yoursite.com/2017/07/11/functools-lru-cache装饰器详解/</id>
+    <published>2017-07-11T14:46:24.000Z</published>
+    <updated>2017-07-13T12:48:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在functools这个模块中，有lru_cache这个一个神奇的装饰器存在。functools.lru_cache的作用主要是用来做缓存，他能把相对耗时的函数结果进行保存，避免传入相同的参数重复计算。同时，缓存并不会无限增长，不用的缓存会被释放。&lt;/p&gt;
+&lt;p&gt;举flue
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="装饰器，functools" scheme="http://yoursite.com/tags/%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%8Cfunctools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scrapy架构简述</title>
+    <link href="http://yoursite.com/2017/07/05/Scrapy%E6%9E%B6%E6%9E%84%E7%AE%80%E8%BF%B0/"/>
+    <id>http://yoursite.com/2017/07/05/Scrapy架构简述/</id>
+    <published>2017-07-05T12:33:20.000Z</published>
+    <updated>2017-07-05T12:38:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;瞅一眼官方文档给出的架构图，此图中包含了Scrapy框架的基本组件构成以及数据流的走向。&lt;br&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2017/07/04/595b0613922a8.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="爬虫" scheme="http://yoursite.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="框架" scheme="http://yoursite.com/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红绿灯下的思考</title>
+    <link href="http://yoursite.com/2017/06/10/%E7%BA%A2%E7%BB%BF%E7%81%AF%E4%B8%8B%E7%9A%84%E6%80%9D%E8%80%83/"/>
+    <id>http://yoursite.com/2017/06/10/红绿灯下的思考/</id>
+    <published>2017-06-10T15:49:21.000Z</published>
+    <updated>2017-06-10T16:11:42.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今晚从健身房回家的时候，经过红绿灯时，正好红灯，停下了脚步。&lt;/p&gt;
+&lt;p&gt;突然意识到自己这日复一日的在人潮中涌动，在整条街中，在整个城市的灯光下，显得极为平凡，渺小。这一生，也许真的就只能是一个平凡的人，和千千万万的上班族一样为了生活奔波劳碌，来不及思考未来，来不及为真理
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="思考，感悟" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83%EF%BC%8C%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>byebye-csdn</title>
+    <link href="http://yoursite.com/2017/05/27/byebye-csdn/"/>
+    <id>http://yoursite.com/2017/05/27/byebye-csdn/</id>
+    <published>2017-05-27T14:37:35.000Z</published>
+    <updated>2017-05-27T14:49:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;鉴于CSDN的广告实在是忍无可忍了，故将博客迁至此处。&lt;/p&gt;
+&lt;p&gt;原CSDN博客不再做更新，仍能访问，地址见站点概览。&lt;/p&gt;
+&lt;p&gt;最后，很高兴有了一个新的博客，新的界面，新的风格，everythind is new!&lt;br&gt;ps:赠桌面一张&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="碎碎念" scheme="http://yoursite.com/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/05/25/hello-world/"/>
+    <id>http://yoursite.com/2017/05/25/hello-world/</id>
+    <published>2017-05-25T10:49:46.000Z</published>
+    <updated>2017-05-25T10:49:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

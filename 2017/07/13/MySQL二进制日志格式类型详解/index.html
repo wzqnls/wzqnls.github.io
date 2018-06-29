@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,6 +80,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Thread Pool" type="application/atom+xml" />
+
 
 
 
@@ -95,9 +97,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL二进制日志格式类型详解">
 <meta property="og:url" content="http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/index.html">
-<meta property="og:site_name" content="l.s">
+<meta property="og:site_name" content="Thread Pool">
 <meta property="og:description" content="mysql很多有类型的日志，按照组件划分的话，可以分为 服务层日志 和  存储引擎层日志 ：  服务层日志：二进制日志、慢查日志、通用日志 存储引擎层日志：innodb(重做日志、回滚日志)  其中比较重要的就是服务器层的二进制日志，其中记录了所有对mysql数据库的修改事件，包括增删改查事件和对表结构的修改事件。要注意的一点是，只有成功执行了的事件才会记录在二进制日志中，未执行成功的不会保存在二">
-<meta property="og:updated_time" content="2017-07-13T12:48:08.534Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-13T12:48:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL二进制日志格式类型详解">
 <meta name="twitter:description" content="mysql很多有类型的日志，按照组件划分的话，可以分为 服务层日志 和  存储引擎层日志 ：  服务层日志：二进制日志、慢查日志、通用日志 存储引擎层日志：innodb(重做日志、回滚日志)  其中比较重要的就是服务器层的二进制日志，其中记录了所有对mysql数据库的修改事件，包括增删改查事件和对表结构的修改事件。要注意的一点是，只有成功执行了的事件才会记录在二进制日志中，未执行成功的不会保存在二">
@@ -108,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -134,7 +137,7 @@
 
 
 
-  <title>MySQL二进制日志格式类型详解 | l.s</title>
+  <title>MySQL二进制日志格式类型详解 | Thread Pool</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -171,12 +174,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">l.s</span>
+        <span class="site-title">Thread Pool</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">论装逼我只服你</p>
+        <p class="site-subtitle">Hello World</p>
       
   </div>
 
@@ -245,21 +248,45 @@
           </a>
         </li>
       
-        
+
+      
         <li class="menu-item menu-item-search">
-          <a href="/search" rel="section">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
             
-              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
         </li>
       
-
-      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -287,13 +314,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lee">
+      <meta itemprop="name" content="wzqnls">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="l.s">
+      <meta itemprop="name" content="Thread Pool">
     </span>
 
     
@@ -329,7 +356,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-13T20:48:08+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-13T20:48:10+08:00">
                 2017-07-13
               </time>
             
@@ -360,17 +387,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/13/MySQL二进制日志格式类型详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/13/MySQL二进制日志格式类型详解/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -417,14 +433,14 @@
 </li>
 </ul>
 <p>命令演示：</p>
-<p>查看当前二进制日志记录格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show variables like &apos;binlog_format&apos;;</div><div class="line">+---------------+-------+</div><div class="line">| Variable_name | Value |</div><div class="line">+---------------+-------+</div><div class="line">| binlog_format | ROW   |</div><div class="line">+---------------+-------+</div><div class="line">1 row in set (0.01 sec)</div></pre></td></tr></table></figure></p>
-<p>修改记录格式为statement，即改为基于段的格式<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt; <span class="keyword">set</span> session <span class="comment">binlog_format=statement</span>;</div><div class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</div></pre></td></tr></table></figure></p>
-<p>此时可用查看格式命令来确认一下，是否修改成功<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="section">mysql&gt; show variables like 'binlog_format';</span></div><div class="line">+---------------+-----------+</div><div class="line"><span class="section">| Variable_name | Value     |</span></div><div class="line">+---------------+-----------+</div><div class="line"><span class="section">| binlog_format | STATEMENT |</span></div><div class="line">+---------------+-----------+</div><div class="line">1 row in set (0.01 sec)</div></pre></td></tr></table></figure></p>
-<p>查看当前二进制日志信息<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">mysql&gt; show binary logs;</div><div class="line">+------------------+-----------+</div><div class="line">|<span class="string"> Log_name         </span>|<span class="string"> File_size </span>|</div><div class="line">+------------------+-----------+</div><div class="line">|<span class="string"> mysql-bin.000058 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000059 </span>|<span class="string">     12721 </span>|</div><div class="line">|<span class="string"> mysql-bin.000060 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000061 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000062 </span>|<span class="string">      1069 </span>|</div><div class="line">|<span class="string"> mysql-bin.000063 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000064 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000065 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000066 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000067 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000068 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000069 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000070 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000071 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000072 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000073 </span>|<span class="string">       154 </span>|</div><div class="line">+------------------+-----------+</div><div class="line">16 rows in set (0.00 sec)</div></pre></td></tr></table></figure></p>
-<p>刷新日志，通过这个操作会产生一个新的log文件<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">mysql&gt; flush logs;</div><div class="line">Query OK, 0 rows affected (0.02 sec)</div><div class="line"></div><div class="line">mysql&gt; show binary logs;</div><div class="line">+------------------+-----------+</div><div class="line">|<span class="string"> Log_name         </span>|<span class="string"> File_size </span>|</div><div class="line">+------------------+-----------+</div><div class="line">|<span class="string"> mysql-bin.000059 </span>|<span class="string">     12721 </span>|</div><div class="line">|<span class="string"> mysql-bin.000060 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000061 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000062 </span>|<span class="string">      1069 </span>|</div><div class="line">|<span class="string"> mysql-bin.000063 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000064 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000065 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000066 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000067 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000068 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000069 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000070 </span>|<span class="string">       177 </span>|</div><div class="line">|<span class="string"> mysql-bin.000071 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000072 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000073 </span>|<span class="string">       201 </span>|</div><div class="line">|<span class="string"> mysql-bin.000074 </span>|<span class="string">       154 </span>|</div><div class="line">+------------------+-----------+</div><div class="line">16 rows in set (0.00 sec)</div></pre></td></tr></table></figure></p>
-<p>现在进行一个测试操作，创建一个新的数据库及表，并插入更新一些数据。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">mysql&gt;</span><span class="bash"> create database <span class="built_in">test</span>;</span></div><div class="line">Query OK, 1 row affected (0.00 sec)</div><div class="line"><span class="meta"></span></div><div class="line">mysql&gt;<span class="bash"> use <span class="built_in">test</span>;</span></div><div class="line">Database changed</div><div class="line"><span class="meta">mysql&gt;</span><span class="bash"> create table t(id int, c1 varchar(10));</span></div><div class="line">Query OK, 0 rows affected (0.02 sec)</div><div class="line"><span class="meta"></span></div><div class="line">mysql&gt;<span class="bash"> insert into t values(1, <span class="string">'aa'</span>),(2, <span class="string">'bb'</span>);</span></div><div class="line">Query OK, 2 rows affected (0.02 sec)</div><div class="line">Records: 2  Duplicates: 0  Warnings: 0</div><div class="line"><span class="meta"></span></div><div class="line">mysql&gt;<span class="bash"> update t <span class="built_in">set</span> c1=<span class="string">'dd'</span> <span class="built_in">where</span> id=1;</span></div><div class="line">Query OK, 1 row affected (0.00 sec)</div><div class="line">Rows matched: 1  Changed: 1  Warnings: 0</div></pre></td></tr></table></figure></p>
+<p>查看当前二进制日志记录格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;binlog_format&apos;;</span><br><span class="line">+---------------+-------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+---------------+-------+</span><br><span class="line">| binlog_format | ROW   |</span><br><span class="line">+---------------+-------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure></p>
+<p>修改记录格式为statement，即改为基于段的格式<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="builtin-name">set</span> session <span class="attribute">binlog_format</span>=statement;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>此时可用查看格式命令来确认一下，是否修改成功<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like <span class="emphasis">'binlog_format'</span>;</span><br><span class="line"><span class="code">+---------------+</span>-----------+</span><br><span class="line">| Variable<span class="emphasis">_name | Value     |</span></span><br><span class="line"><span class="emphasis">+---------------+-----------+</span></span><br><span class="line"><span class="emphasis">| binlog_</span>format | STATEMENT |</span><br><span class="line"><span class="code">+---------------+</span>-----------+</span><br><span class="line">1 row in set (0.01 sec)</span><br></pre></td></tr></table></figure></p>
+<p>查看当前二进制日志信息<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show binary logs;</span><br><span class="line">+------------------+-----------+</span><br><span class="line">|<span class="string"> Log_name         </span>|<span class="string"> File_size </span>|</span><br><span class="line">+------------------+-----------+</span><br><span class="line">|<span class="string"> mysql-bin.000058 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000059 </span>|<span class="string">     12721 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000060 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000061 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000062 </span>|<span class="string">      1069 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000063 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000064 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000065 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000066 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000067 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000068 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000069 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000070 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000071 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000072 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000073 </span>|<span class="string">       154 </span>|</span><br><span class="line">+------------------+-----------+</span><br><span class="line">16 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>刷新日志，通过这个操作会产生一个新的log文件<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush logs;</span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show binary logs;</span><br><span class="line">+------------------+-----------+</span><br><span class="line">|<span class="string"> Log_name         </span>|<span class="string"> File_size </span>|</span><br><span class="line">+------------------+-----------+</span><br><span class="line">|<span class="string"> mysql-bin.000059 </span>|<span class="string">     12721 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000060 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000061 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000062 </span>|<span class="string">      1069 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000063 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000064 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000065 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000066 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000067 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000068 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000069 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000070 </span>|<span class="string">       177 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000071 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000072 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000073 </span>|<span class="string">       201 </span>|</span><br><span class="line">|<span class="string"> mysql-bin.000074 </span>|<span class="string">       154 </span>|</span><br><span class="line">+------------------+-----------+</span><br><span class="line">16 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>现在进行一个测试操作，创建一个新的数据库及表，并插入更新一些数据。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> create database <span class="built_in">test</span>;</span></span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> use <span class="built_in">test</span>;</span></span><br><span class="line">Database changed</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> create table t(id int, c1 varchar(10));</span></span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> insert into t values(1, <span class="string">'aa'</span>),(2, <span class="string">'bb'</span>);</span></span><br><span class="line">Query OK, 2 rows affected (0.02 sec)</span><br><span class="line">Records: 2  Duplicates: 0  Warnings: 0</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> update t <span class="built_in">set</span> c1=<span class="string">'dd'</span> <span class="built_in">where</span> id=1;</span></span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 0</span><br></pre></td></tr></table></figure></p>
 <p>这个时候可以进入存放日志的文件夹进行查看二进制日志的具体内容，<br>不同的操作系统存放路径不同。以ubuntu为例，路径为/var/log/mysql</p>
-<p>刚才的操作已经写入新生成的binlog文件中，使用mysqlbinlog命令打开最新的log文件，在此文件中可以清晰的查看到我们所操作过的sql语句<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># lee @ acer in /var/log/mysql [10:58:38] C:127</span></div><div class="line">$ mysqlbinlog mysql-<span class="keyword">bin.000074</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 4</span></div><div class="line"><span class="comment">#170713 10:40:30 server id 1  end_log_pos 123 CRC32 0x3bcc260d 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 10:40:30</span></div><div class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">nt1mWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</div><div class="line">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</div><div class="line">AQ0mzDs=</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 123</span></div><div class="line"><span class="comment">#170713 10:40:30 server id 1  end_log_pos 154 CRC32 0x004e07fa 	Previous-GTIDs</span></div><div class="line"><span class="comment"># [empty]</span></div><div class="line"><span class="comment"># at 154</span></div><div class="line"><span class="comment">#170713 10:42:47 server id 1  end_log_pos 219 CRC32 0x6d2f1e61 	Anonymous_GTID	last_committed=0	sequence_number=1</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 219</span></div><div class="line"><span class="comment">#170713 10:42:47 server id 1  end_log_pos 313 CRC32 0x182062d1 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913767</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.pseudo_thread_id=<span class="number">8</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.foreign_key_checks=<span class="number">1</span>, @@session.sql_auto_is_null=<span class="number">0</span>, @@session.unique_checks=<span class="number">1</span>, @@session.autocommit=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.sql_mode=<span class="number">1436549152</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.auto_increment_increment=<span class="number">1</span>, @@session.auto_increment_offset=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!\C utf8 */</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.character_set_client=<span class="number">33</span>,@@session.collation_connection=<span class="number">33</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.lc_time_names=<span class="number">0</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.collation_database=DEFAULT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">create database test</div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 313</span></div><div class="line"><span class="comment">#170713 10:43:14 server id 1  end_log_pos 378 CRC32 0x5af42684 	Anonymous_GTID	last_committed=1	sequence_number=2</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 378</span></div><div class="line"><span class="comment">#170713 10:43:14 server id 1  end_log_pos 490 CRC32 0x926e1454 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">use `test`<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913794</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">create table t(id int, c1 varchar(<span class="number">10</span>))</div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 490</span></div><div class="line"><span class="comment">#170713 10:43:37 server id 1  end_log_pos 555 CRC32 0x571dd95f 	Anonymous_GTID	last_committed=2	sequence_number=3</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 555</span></div><div class="line"><span class="comment">#170713 10:43:37 server id 1  end_log_pos 634 CRC32 0xea457c9c 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913817</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 634</span></div><div class="line"><span class="comment">#170713 10:43:37 server id 1  end_log_pos 747 CRC32 0x84b084e8 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913817</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">insert </span>into t values(<span class="number">1</span>, <span class="string">'aa'</span>),(<span class="number">2</span>, <span class="string">'bb'</span>)</div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 747</span></div><div class="line"><span class="comment">#170713 10:43:37 server id 1  end_log_pos 778 CRC32 0xb4d17852 	Xid = 25</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 778</span></div><div class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 843 CRC32 0x45fa3a6e 	Anonymous_GTID	last_committed=3	sequence_number=4</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 843</span></div><div class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 922 CRC32 0x8fbf2543 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913932</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 922</span></div><div class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 1027 CRC32 0xd4bcab33 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499913932</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">update t set c1=<span class="string">'dd'</span> where id=<span class="number">1</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 1027</span></div><div class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 1058 CRC32 0x769f943d 	Xid = 26</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">;</span></div><div class="line"><span class="comment"># End of log file</span></div><div class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span><span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>刚才的操作已经写入新生成的binlog文件中，使用mysqlbinlog命令打开最新的log文件，在此文件中可以清晰的查看到我们所操作过的sql语句<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lee @ acer in /var/log/mysql [10:58:38] C:127</span></span><br><span class="line">$ mysqlbinlog mysql-<span class="keyword">bin.000074</span></span><br><span class="line">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;</span><br><span class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></span><br><span class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 4</span></span><br><span class="line"><span class="comment">#170713 10:40:30 server id 1  end_log_pos 123 CRC32 0x3bcc260d 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 10:40:30</span></span><br><span class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></span><br><span class="line"><span class="keyword">BINLOG </span><span class="string">'</span></span><br><span class="line"><span class="string">nt1mWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</span></span><br><span class="line"><span class="string">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</span></span><br><span class="line"><span class="string">AQ0mzDs=</span></span><br><span class="line"><span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 123</span></span><br><span class="line"><span class="string">#170713 10:40:30 server id 1  end_log_pos 154 CRC32 0x004e07fa 	Previous-GTIDs</span></span><br><span class="line"><span class="string"># [empty]</span></span><br><span class="line"><span class="string"># at 154</span></span><br><span class="line"><span class="string">#170713 10:42:47 server id 1  end_log_pos 219 CRC32 0x6d2f1e61 	Anonymous_GTID	last_committed=0	sequence_number=1</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 219</span></span><br><span class="line"><span class="string">#170713 10:42:47 server id 1  end_log_pos 313 CRC32 0x182062d1 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499913767/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.pseudo_thread_id=8/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.sql_mode=1436549152/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;</span></span><br><span class="line"><span class="string">/*!\C utf8 *//*!*/;</span></span><br><span class="line"><span class="string">SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=33/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.lc_time_names=0/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.collation_database=DEFAULT/*!*/;</span></span><br><span class="line"><span class="string">create database test</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 313</span></span><br><span class="line"><span class="string">#170713 10:43:14 server id 1  end_log_pos 378 CRC32 0x5af42684 	Anonymous_GTID	last_committed=1	sequence_number=2</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 378</span></span><br><span class="line"><span class="string">#170713 10:43:14 server id 1  end_log_pos 490 CRC32 0x926e1454 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">use `test`/*!*/;</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499913794/*!*/;</span></span><br><span class="line"><span class="string">create table t(id int, c1 varchar(10))</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 490</span></span><br><span class="line"><span class="string">#170713 10:43:37 server id 1  end_log_pos 555 CRC32 0x571dd95f 	Anonymous_GTID	last_committed=2	sequence_number=3</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 555</span></span><br><span class="line"><span class="string">#170713 10:43:37 server id 1  end_log_pos 634 CRC32 0xea457c9c 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499913817/*!*/;</span></span><br><span class="line"><span class="string">BEGIN</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 634</span></span><br><span class="line"><span class="string">#170713 10:43:37 server id 1  end_log_pos 747 CRC32 0x84b084e8 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499913817/*!*/;</span></span><br><span class="line"><span class="string">insert into t values(1, '</span>aa<span class="string">'),(2, '</span><span class="keyword">bb')</span></span><br><span class="line"><span class="keyword">/*!*/;</span></span><br><span class="line"><span class="keyword"># </span><span class="built_in">at</span> <span class="number">747</span></span><br><span class="line"><span class="comment">#170713 10:43:37 server id 1  end_log_pos 778 CRC32 0xb4d17852 	Xid = 25</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 778</span></span><br><span class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 843 CRC32 0x45fa3a6e 	Anonymous_GTID	last_committed=3	sequence_number=4</span></span><br><span class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 843</span></span><br><span class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 922 CRC32 0x8fbf2543 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line">SET TIMESTAMP=<span class="number">1499913932</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">/*!*/;</span></span><br><span class="line"><span class="keyword"># </span><span class="built_in">at</span> <span class="number">922</span></span><br><span class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 1027 CRC32 0xd4bcab33 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line">SET TIMESTAMP=<span class="number">1499913932</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line">update t set c1=<span class="string">'dd'</span> where id=<span class="number">1</span></span><br><span class="line"><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 1027</span></span><br><span class="line"><span class="comment">#170713 10:45:32 server id 1  end_log_pos 1058 CRC32 0x769f943d 	Xid = 26</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line">DELIMITER <span class="comment">;</span></span><br><span class="line"><span class="comment"># End of log file</span></span><br><span class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <hr>
 <ul>
 <li>基于行的日志格式 binlog_format=ROW<ul>
@@ -447,17 +463,17 @@
 </li>
 </ul>
 <p>命令演示：</p>
-<p>切换日志格式并刷新日志<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">mysql&gt; set session binlog<span class="emphasis">_format=row;</span></div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line"></div><div class="line"><span class="section">mysql&gt; show variables like 'binlog_format';</span></div><div class="line">+---------------+-------+</div><div class="line"><span class="section">| Variable_name | Value |</span></div><div class="line">+---------------+-------+</div><div class="line"><span class="section">| binlog_format | ROW   |</span></div><div class="line">+---------------+-------+</div><div class="line">1 row in set (0.00 sec)</div><div class="line"></div><div class="line">mysql&gt; flush logs;</div><div class="line">Query OK, 0 rows affected (0.02 sec)</div></pre></td></tr></table></figure></p>
-<p>查看binlog_row_image参数默认值<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="section">mysql&gt; show variables like 'binlog_row_image';</span></div><div class="line">+------------------+-------+</div><div class="line"><span class="section">| Variable_name    | Value |</span></div><div class="line">+------------------+-------+</div><div class="line"><span class="section">| binlog_row_image | FULL  |</span></div><div class="line">+------------------+-------+</div><div class="line">1 row in set (0.00 sec)</div></pre></td></tr></table></figure></p>
-<p>为方便演示noblob参数效果，修改数据库表信息，增加一列text字段<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">mysql&gt; alter table t add c2 text;</div><div class="line">Query OK, 0 rows affected (0.06 sec)</div><div class="line">Records: 0  Duplicates: 0  Warnings: 0</div><div class="line"></div><div class="line"><span class="section">mysql&gt; select * from t;</span></div><div class="line">+------+------+------+</div><div class="line"><span class="section">| id   | c1   | c2   |</span></div><div class="line">+------+------+------+</div><div class="line">|    1 | dd   | NULL |</div><div class="line"><span class="section">|    2 | bb   | NULL |</span></div><div class="line">+------+------+------+</div><div class="line">2 rows in set (0.01 sec)</div></pre></td></tr></table></figure></p>
-<p>随意执行一些sql操作<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt; <span class="keyword">insert</span> <span class="keyword">into</span> t <span class="keyword">values</span>(<span class="number">3</span>, <span class="string">'haha'</span>, <span class="string">'llala'</span>);</div><div class="line">Query OK, 1 row affected (0.01 sec)</div><div class="line"></div><div class="line">mysql&gt; <span class="keyword">delete</span> <span class="keyword">from</span> t <span class="keyword">where</span> id=<span class="number">1</span>;</div><div class="line">Query OK, 1 row affected (0.00 sec)</div></pre></td></tr></table></figure></p>
-<p>查看binlog日志<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># lee @ acer in /var/log/mysql [14:45:28] </span></div><div class="line">$ mysqlbinlog mysql-<span class="keyword">bin.000076</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 4</span></div><div class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 123 CRC32 0xbf52e415 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 14:35:53</span></div><div class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">yRRnWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</div><div class="line">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</div><div class="line">ARXkUr8=</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 123</span></div><div class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 154 CRC32 0xafecf53d 	Previous-GTIDs</span></div><div class="line"><span class="comment"># [empty]</span></div><div class="line"><span class="comment"># at 154</span></div><div class="line"><span class="comment">#170713 14:43:03 server id 1  end_log_pos 219 CRC32 0x491b5a7e 	Anonymous_GTID	last_committed=0	sequence_number=1</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 219</span></div><div class="line"><span class="comment">#170713 14:43:03 server id 1  end_log_pos 318 CRC32 0x4acf1cd1 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">use `test`<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928183</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.pseudo_thread_id=<span class="number">8</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.foreign_key_checks=<span class="number">1</span>, @@session.sql_auto_is_null=<span class="number">0</span>, @@session.unique_checks=<span class="number">1</span>, @@session.autocommit=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.sql_mode=<span class="number">1436549152</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.auto_increment_increment=<span class="number">1</span>, @@session.auto_increment_offset=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!\C utf8 */</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.character_set_client=<span class="number">33</span>,@@session.collation_connection=<span class="number">33</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.lc_time_names=<span class="number">0</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.collation_database=DEFAULT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">alter table t <span class="keyword">add </span>c2 text</div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 318</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 383 CRC32 0x8437eaf9 	Anonymous_GTID	last_committed=1	sequence_number=2</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 383</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 455 CRC32 0x57adaf15 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928242</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 455</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 504 CRC32 0xdba65133 	Table_map: `test`.`t` mapped to number 498</span></div><div class="line"><span class="comment"># at 504</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 556 CRC32 0x19769a28 	Write_rows: table id 498 flags: STMT_END_F</span></div><div class="line"></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">shZnWRMBAAAAMQAAAPgBAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHM1Gm2w==</div><div class="line">shZnWR4BAAAANAAAACwCAAAAAPIBAAAAAAEAAgAD//gDAAAABGhhaGEFAGxsYWxhKJp2GQ==</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 556</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 587 CRC32 0x6184a9a1 	Xid = 47</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 587</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 652 CRC32 0xc585d273 	Anonymous_GTID	last_committed=2	sequence_number=3</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 652</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 724 CRC32 0x63005380 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928256</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 724</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 773 CRC32 0x2c52eaa1 	Table_map: `test`.`t` mapped to number 498</span></div><div class="line"><span class="comment"># at 773</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 816 CRC32 0xa80bd454 	Delete_rows: table id 498 flags: STMT_END_F</span></div><div class="line"></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">wBZnWRMBAAAAMQAAAAUDAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHoepSLA==</div><div class="line">wBZnWSABAAAAKwAAADADAAAAAPIBAAAAAAEAAgAD//wBAAAAAmRkVNQLqA==</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 816</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 847 CRC32 0x9d03bcd0 	Xid = 48</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">;</span></div><div class="line"><span class="comment"># End of log file</span></div><div class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span><span class="comment">;</span></div></pre></td></tr></table></figure></p>
-<p>单纯的使用mysqlbinlog命令，我们无法直观的看懂日志中保存的信息，所以加参数打开<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># lee @ acer in /var/log/mysql [14:45:44] </span></div><div class="line">$ mysqlbinlog -vv mysql-<span class="keyword">bin.000076</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 4</span></div><div class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 123 CRC32 0xbf52e415 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 14:35:53</span></div><div class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">yRRnWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</div><div class="line">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</div><div class="line">ARXkUr8=</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 123</span></div><div class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 154 CRC32 0xafecf53d 	Previous-GTIDs</span></div><div class="line"><span class="comment"># [empty]</span></div><div class="line"><span class="comment"># at 154</span></div><div class="line"><span class="comment">#170713 14:43:03 server id 1  end_log_pos 219 CRC32 0x491b5a7e 	Anonymous_GTID	last_committed=0	sequence_number=1</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 219</span></div><div class="line"><span class="comment">#170713 14:43:03 server id 1  end_log_pos 318 CRC32 0x4acf1cd1 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">use `test`<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928183</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.pseudo_thread_id=<span class="number">8</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.foreign_key_checks=<span class="number">1</span>, @@session.sql_auto_is_null=<span class="number">0</span>, @@session.unique_checks=<span class="number">1</span>, @@session.autocommit=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.sql_mode=<span class="number">1436549152</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.auto_increment_increment=<span class="number">1</span>, @@session.auto_increment_offset=<span class="number">1</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!\C utf8 */</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.character_set_client=<span class="number">33</span>,@@session.collation_connection=<span class="number">33</span>,@@session.collation_server=<span class="number">33</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.lc_time_names=<span class="number">0</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@session.collation_database=DEFAULT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">alter table t <span class="keyword">add </span>c2 text</div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 318</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 383 CRC32 0x8437eaf9 	Anonymous_GTID	last_committed=1	sequence_number=2</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 383</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 455 CRC32 0x57adaf15 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928242</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 455</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 504 CRC32 0xdba65133 	Table_map: `test`.`t` mapped to number 498</span></div><div class="line"><span class="comment"># at 504</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 556 CRC32 0x19769a28 	Write_rows: table id 498 flags: STMT_END_F</span></div><div class="line"></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">shZnWRMBAAAAMQAAAPgBAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHM1Gm2w==</div><div class="line">shZnWR4BAAAANAAAACwCAAAAAPIBAAAAAAEAAgAD//gDAAAABGhhaGEFAGxsYWxhKJp2GQ==</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment">### INSERT INTO `test`.`t`</span></div><div class="line"><span class="comment">### SET</span></div><div class="line"><span class="comment">###   @1=3 /* INT meta=0 nullable=1 is_null=0 */</span></div><div class="line"><span class="comment">###   @2='haha' /* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></div><div class="line"><span class="comment">###   @3='llala' /* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></div><div class="line"><span class="comment"># at 556</span></div><div class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 587 CRC32 0x6184a9a1 	Xid = 47</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 587</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 652 CRC32 0xc585d273 	Anonymous_GTID	last_committed=2	sequence_number=3</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 652</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 724 CRC32 0x63005380 	Query	thread_id=8	exec_time=0	error_code=0</span></div><div class="line">SET TIMESTAMP=<span class="number">1499928256</span><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment"># at 724</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 773 CRC32 0x2c52eaa1 	Table_map: `test`.`t` mapped to number 498</span></div><div class="line"><span class="comment"># at 773</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 816 CRC32 0xa80bd454 	Delete_rows: table id 498 flags: STMT_END_F</span></div><div class="line"></div><div class="line"><span class="keyword">BINLOG </span><span class="string">'</span></div><div class="line">wBZnWRMBAAAAMQAAAAUDAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHoepSLA==</div><div class="line">wBZnWSABAAAAKwAAADADAAAAAPIBAAAAAAEAAgAD//wBAAAAAmRkVNQLqA==</div><div class="line">'<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line"><span class="comment">### DELETE FROM `test`.`t`</span></div><div class="line"><span class="comment">### WHERE</span></div><div class="line"><span class="comment">###   @1=1 /* INT meta=0 nullable=1 is_null=0 */</span></div><div class="line"><span class="comment">###   @2='dd' /* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></div><div class="line"><span class="comment">###   @3=NULL /* BLOB/TEXT meta=2 nullable=1 is_null=1 */</span></div><div class="line"><span class="comment"># at 816</span></div><div class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 847 CRC32 0x9d03bcd0 	Xid = 48</span></div><div class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span><span class="comment">;</span></div><div class="line">DELIMITER <span class="comment">;</span></div><div class="line"><span class="comment"># End of log file</span></div><div class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span><span class="comment">;</span></div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span><span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>切换日志格式并刷新日志<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set session binlog<span class="emphasis">_format=row;</span></span><br><span class="line"><span class="emphasis">Query OK, 0 rows affected (0.00 sec)</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">mysql&gt; show variables like 'binlog_</span>format';</span><br><span class="line"><span class="code">+---------------+</span>-------+</span><br><span class="line">| Variable<span class="emphasis">_name | Value |</span></span><br><span class="line"><span class="emphasis">+---------------+-------+</span></span><br><span class="line"><span class="emphasis">| binlog_</span>format | ROW   |</span><br><span class="line"><span class="code">+---------------+</span>-------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; flush logs;</span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br></pre></td></tr></table></figure></p>
+<p>查看binlog_row_image参数默认值<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like <span class="emphasis">'binlog_row_image'</span>;</span><br><span class="line"><span class="code">+------------------+</span>-------+</span><br><span class="line">| Variable<span class="emphasis">_name    | Value |</span></span><br><span class="line"><span class="emphasis">+------------------+-------+</span></span><br><span class="line"><span class="emphasis">| binlog_</span>row<span class="emphasis">_image | FULL  |</span></span><br><span class="line"><span class="emphasis">+------------------+-------+</span></span><br><span class="line"><span class="emphasis">1 row in set (0.00 sec)</span></span><br></pre></td></tr></table></figure></p>
+<p>为方便演示noblob参数效果，修改数据库表信息，增加一列text字段<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter table t add c2 text;</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br><span class="line">Records: 0  Duplicates: 0  Warnings: 0</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from t;</span><br><span class="line"><span class="code">+------+</span>------<span class="code">+------+</span></span><br><span class="line">| id   | c1   | c2   |</span><br><span class="line"><span class="code">+------+</span>------<span class="code">+------+</span></span><br><span class="line">|    1 | dd   | NULL |</span><br><span class="line">|    2 | bb   | NULL |</span><br><span class="line"><span class="code">+------+</span>------<span class="code">+------+</span></span><br><span class="line">2 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure></p>
+<p>随意执行一些sql操作<br><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="keyword">insert</span> <span class="keyword">into</span> t <span class="keyword">values</span>(<span class="number">3</span>, <span class="string">'haha'</span>, <span class="string">'llala'</span>);</span><br><span class="line">Query OK, 1 row affected (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="keyword">delete</span> <span class="keyword">from</span> t <span class="keyword">where</span> id=<span class="number">1</span>;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>查看binlog日志<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lee @ acer in /var/log/mysql [14:45:28] </span></span><br><span class="line">$ mysqlbinlog mysql-<span class="keyword">bin.000076</span></span><br><span class="line">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;</span><br><span class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></span><br><span class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 4</span></span><br><span class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 123 CRC32 0xbf52e415 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 14:35:53</span></span><br><span class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></span><br><span class="line"><span class="keyword">BINLOG </span><span class="string">'</span></span><br><span class="line"><span class="string">yRRnWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</span></span><br><span class="line"><span class="string">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</span></span><br><span class="line"><span class="string">ARXkUr8=</span></span><br><span class="line"><span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 123</span></span><br><span class="line"><span class="string">#170713 14:35:53 server id 1  end_log_pos 154 CRC32 0xafecf53d 	Previous-GTIDs</span></span><br><span class="line"><span class="string"># [empty]</span></span><br><span class="line"><span class="string"># at 154</span></span><br><span class="line"><span class="string">#170713 14:43:03 server id 1  end_log_pos 219 CRC32 0x491b5a7e 	Anonymous_GTID	last_committed=0	sequence_number=1</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 219</span></span><br><span class="line"><span class="string">#170713 14:43:03 server id 1  end_log_pos 318 CRC32 0x4acf1cd1 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">use `test`/*!*/;</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499928183/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.pseudo_thread_id=8/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.sql_mode=1436549152/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;</span></span><br><span class="line"><span class="string">/*!\C utf8 *//*!*/;</span></span><br><span class="line"><span class="string">SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=33/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.lc_time_names=0/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.collation_database=DEFAULT/*!*/;</span></span><br><span class="line"><span class="string">alter table t add c2 text</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 318</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 383 CRC32 0x8437eaf9 	Anonymous_GTID	last_committed=1	sequence_number=2</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 383</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 455 CRC32 0x57adaf15 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499928242/*!*/;</span></span><br><span class="line"><span class="string">BEGIN</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 455</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 504 CRC32 0xdba65133 	Table_map: `test`.`t` mapped to number 498</span></span><br><span class="line"><span class="string"># at 504</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 556 CRC32 0x19769a28 	Write_rows: table id 498 flags: STMT_END_F</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">BINLOG '</span></span><br><span class="line"><span class="keyword">shZnWRMBAAAAMQAAAPgBAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHM1Gm2w==</span></span><br><span class="line"><span class="keyword">shZnWR4BAAAANAAAACwCAAAAAPIBAAAAAAEAAgAD//gDAAAABGhhaGEFAGxsYWxhKJp2GQ==</span></span><br><span class="line"><span class="keyword">'/*!*/;</span></span><br><span class="line"><span class="keyword"># </span><span class="built_in">at</span> <span class="number">556</span></span><br><span class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 587 CRC32 0x6184a9a1 	Xid = 47</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 587</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 652 CRC32 0xc585d273 	Anonymous_GTID	last_committed=2	sequence_number=3</span></span><br><span class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 652</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 724 CRC32 0x63005380 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line">SET TIMESTAMP=<span class="number">1499928256</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">/*!*/;</span></span><br><span class="line"><span class="keyword"># </span><span class="built_in">at</span> <span class="number">724</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 773 CRC32 0x2c52eaa1 	Table_map: `test`.`t` mapped to number 498</span></span><br><span class="line"><span class="comment"># at 773</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 816 CRC32 0xa80bd454 	Delete_rows: table id 498 flags: STMT_END_F</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">BINLOG </span><span class="string">'</span></span><br><span class="line"><span class="string">wBZnWRMBAAAAMQAAAAUDAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHoepSLA==</span></span><br><span class="line"><span class="string">wBZnWSABAAAAKwAAADADAAAAAPIBAAAAAAEAAgAD//wBAAAAAmRkVNQLqA==</span></span><br><span class="line"><span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 816</span></span><br><span class="line"><span class="string">#170713 14:44:16 server id 1  end_log_pos 847 CRC32 0x9d03bcd0 	Xid = 48</span></span><br><span class="line"><span class="string">COMMIT/*!*/;</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>AUTOMATIC<span class="string">' /* added by mysqlbinlog */ /*!*/;</span></span><br><span class="line"><span class="string">DELIMITER ;</span></span><br><span class="line"><span class="string"># End of log file</span></span><br><span class="line"><span class="string">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;</span></span><br><span class="line"><span class="string">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;</span></span><br></pre></td></tr></table></figure></p>
+<p>单纯的使用mysqlbinlog命令，我们无法直观的看懂日志中保存的信息，所以加参数打开<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lee @ acer in /var/log/mysql [14:45:44] </span></span><br><span class="line">$ mysqlbinlog -vv mysql-<span class="keyword">bin.000076</span></span><br><span class="line">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;</span><br><span class="line"><span class="comment">/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/</span><span class="comment">;</span></span><br><span class="line">DELIMITER <span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 4</span></span><br><span class="line"><span class="comment">#170713 14:35:53 server id 1  end_log_pos 123 CRC32 0xbf52e415 	Start: binlog v 4, server v 5.7.18-0ubuntu0.16.04.1-log created 170713 14:35:53</span></span><br><span class="line"><span class="comment"># Warning: this binlog is either in use or was not closed properly.</span></span><br><span class="line"><span class="keyword">BINLOG </span><span class="string">'</span></span><br><span class="line"><span class="string">yRRnWQ8BAAAAdwAAAHsAAAABAAQANS43LjE4LTB1YnVudHUwLjE2LjA0LjEtbG9nAAAAAAAAAAAA</span></span><br><span class="line"><span class="string">AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA</span></span><br><span class="line"><span class="string">ARXkUr8=</span></span><br><span class="line"><span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 123</span></span><br><span class="line"><span class="string">#170713 14:35:53 server id 1  end_log_pos 154 CRC32 0xafecf53d 	Previous-GTIDs</span></span><br><span class="line"><span class="string"># [empty]</span></span><br><span class="line"><span class="string"># at 154</span></span><br><span class="line"><span class="string">#170713 14:43:03 server id 1  end_log_pos 219 CRC32 0x491b5a7e 	Anonymous_GTID	last_committed=0	sequence_number=1</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 219</span></span><br><span class="line"><span class="string">#170713 14:43:03 server id 1  end_log_pos 318 CRC32 0x4acf1cd1 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">use `test`/*!*/;</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499928183/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.pseudo_thread_id=8/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.sql_mode=1436549152/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;</span></span><br><span class="line"><span class="string">/*!\C utf8 *//*!*/;</span></span><br><span class="line"><span class="string">SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=33/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.lc_time_names=0/*!*/;</span></span><br><span class="line"><span class="string">SET @@session.collation_database=DEFAULT/*!*/;</span></span><br><span class="line"><span class="string">alter table t add c2 text</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 318</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 383 CRC32 0x8437eaf9 	Anonymous_GTID	last_committed=1	sequence_number=2</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>ANONYMOUS<span class="string">'/*!*/;</span></span><br><span class="line"><span class="string"># at 383</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 455 CRC32 0x57adaf15 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line"><span class="string">SET TIMESTAMP=1499928242/*!*/;</span></span><br><span class="line"><span class="string">BEGIN</span></span><br><span class="line"><span class="string">/*!*/;</span></span><br><span class="line"><span class="string"># at 455</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 504 CRC32 0xdba65133 	Table_map: `test`.`t` mapped to number 498</span></span><br><span class="line"><span class="string"># at 504</span></span><br><span class="line"><span class="string">#170713 14:44:02 server id 1  end_log_pos 556 CRC32 0x19769a28 	Write_rows: table id 498 flags: STMT_END_F</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">BINLOG '</span></span><br><span class="line"><span class="keyword">shZnWRMBAAAAMQAAAPgBAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHM1Gm2w==</span></span><br><span class="line"><span class="keyword">shZnWR4BAAAANAAAACwCAAAAAPIBAAAAAAEAAgAD//gDAAAABGhhaGEFAGxsYWxhKJp2GQ==</span></span><br><span class="line"><span class="keyword">'/*!*/;</span></span><br><span class="line"><span class="keyword">### </span><span class="keyword">INSERT </span>INTO `test`.`t`</span><br><span class="line"><span class="comment">### SET</span></span><br><span class="line"><span class="comment">###   @1=3 /* INT meta=0 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @2='haha' /* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment">###   @3='llala' /* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="comment"># at 556</span></span><br><span class="line"><span class="comment">#170713 14:44:02 server id 1  end_log_pos 587 CRC32 0x6184a9a1 	Xid = 47</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 587</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 652 CRC32 0xc585d273 	Anonymous_GTID	last_committed=2	sequence_number=3</span></span><br><span class="line">SET @@SESSION.GTID_NEXT= <span class="string">'ANONYMOUS'</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="comment"># at 652</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 724 CRC32 0x63005380 	Query	thread_id=8	exec_time=0	error_code=0</span></span><br><span class="line">SET TIMESTAMP=<span class="number">1499928256</span><span class="comment">/*!*/</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">/*!*/;</span></span><br><span class="line"><span class="keyword"># </span><span class="built_in">at</span> <span class="number">724</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 773 CRC32 0x2c52eaa1 	Table_map: `test`.`t` mapped to number 498</span></span><br><span class="line"><span class="comment"># at 773</span></span><br><span class="line"><span class="comment">#170713 14:44:16 server id 1  end_log_pos 816 CRC32 0xa80bd454 	Delete_rows: table id 498 flags: STMT_END_F</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">BINLOG </span><span class="string">'</span></span><br><span class="line"><span class="string">wBZnWRMBAAAAMQAAAAUDAAAAAPIBAAAAAAEABHRlc3QAAXQAAwMP/AMeAAIHoepSLA==</span></span><br><span class="line"><span class="string">wBZnWSABAAAAKwAAADADAAAAAPIBAAAAAAEAAgAD//wBAAAAAmRkVNQLqA==</span></span><br><span class="line"><span class="string">'/*!*/;</span></span><br><span class="line"><span class="string">### DELETE FROM `test`.`t`</span></span><br><span class="line"><span class="string">### WHERE</span></span><br><span class="line"><span class="string">###   @1=1 /* INT meta=0 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="string">###   @2='</span>dd<span class="string">' /* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></span><br><span class="line"><span class="string">###   @3=NULL /* BLOB/TEXT meta=2 nullable=1 is_null=1 */</span></span><br><span class="line"><span class="string"># at 816</span></span><br><span class="line"><span class="string">#170713 14:44:16 server id 1  end_log_pos 847 CRC32 0x9d03bcd0 	Xid = 48</span></span><br><span class="line"><span class="string">COMMIT/*!*/;</span></span><br><span class="line"><span class="string">SET @@SESSION.GTID_NEXT= '</span>AUTOMATIC<span class="string">' /* added by mysqlbinlog */ /*!*/;</span></span><br><span class="line"><span class="string">DELIMITER ;</span></span><br><span class="line"><span class="string"># End of log file</span></span><br><span class="line"><span class="string">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;</span></span><br><span class="line"><span class="string">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;</span></span><br></pre></td></tr></table></figure></p>
 <p>这时，我们就可以找到我们所执行过的sql语句，同时这种格式的日志还记录了修改过的每一行数据的信息</p>
-<p>修改binlog_row_image参数值，更新一条记录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">mysql&gt;</span><span class="bash"> <span class="built_in">set</span> session binlog_row_image=minimal;</span></div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line"><span class="meta"></span></div><div class="line">mysql&gt;<span class="bash"> update t <span class="built_in">set</span> c2=<span class="string">'this 2'</span> <span class="built_in">where</span> id=2;</span></div><div class="line">Query OK, 1 row affected (0.00 sec)</div><div class="line">Rows matched: 1  Changed: 1  Warnings: 0</div></pre></td></tr></table></figure></p>
-<p>查看binlog文件记录内容（只截取新增部分操作）<br><strong> 从记录内容可看出，日志只记录了修改那行数据的第三列，即c2的值，未变动的列并未记录</strong><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">### UPDATE `test`.`t`</div><div class="line">### WHERE</div><div class="line">###   @<span class="number">1</span>=<span class="number">2</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></div><div class="line">###   @<span class="number">2</span>=<span class="string">'bb'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></div><div class="line">###   @<span class="number">3</span>=NULL <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=1 */</span></div><div class="line">### SET</div><div class="line">###   @<span class="number">3</span>=<span class="string">'this 2'</span> <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></div><div class="line"># at <span class="number">1086</span></div><div class="line">#<span class="number">170713</span> <span class="number">15</span>:<span class="number">18</span>:<span class="number">21</span> server id <span class="number">1</span>  end_log_pos <span class="number">1117</span> CRC32 <span class="number">0xfdd198ec</span> 	Xid = <span class="number">50</span></div><div class="line">COMMIT<span class="comment">/*!*/</span>;</div><div class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span>;</div><div class="line">DELIMITER ;</div><div class="line"># End <span class="keyword">of</span> log file</div><div class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span>;</div><div class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span>;</div></pre></td></tr></table></figure></p>
-<p>继续修改binlog_row_image参数值，更新一条记录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">mysql&gt;</span><span class="bash"> <span class="built_in">set</span> session binlog_row_image=noblob;</span></div><div class="line">Query OK, 0 rows affected (0.00 sec)</div><div class="line"><span class="meta"></span></div><div class="line">mysql&gt;<span class="bash"> update t <span class="built_in">set</span> c1=<span class="string">'woqu'</span> <span class="built_in">where</span> id=3;</span></div><div class="line">Query OK, 1 row affected (0.01 sec)</div><div class="line">Rows matched: 1  Changed: 1  Warnings: 0</div></pre></td></tr></table></figure></p>
-<p>查看binlog文件记录内容（同上）<br><strong> 从记录内容可以发现，日志只记录了第一列和第二列的数据，并没有记录第三列text属性的值 </strong><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">### UPDATE `test`.`t`</div><div class="line">### WHERE</div><div class="line">###   @<span class="number">1</span>=<span class="number">3</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></div><div class="line">###   @<span class="number">2</span>=<span class="string">'fff'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></div><div class="line">###   @<span class="number">3</span>=<span class="string">'llala'</span> <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></div><div class="line">### SET</div><div class="line">###   @<span class="number">1</span>=<span class="number">3</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></div><div class="line">###   @<span class="number">2</span>=<span class="string">'woqu'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></div><div class="line"># at <span class="number">1640</span></div><div class="line">#<span class="number">170713</span> <span class="number">15</span>:<span class="number">24</span>:<span class="number">28</span> server id <span class="number">1</span>  end_log_pos <span class="number">1671</span> CRC32 <span class="number">0x429c269c</span> 	Xid = <span class="number">55</span></div><div class="line">COMMIT<span class="comment">/*!*/</span>;</div></pre></td></tr></table></figure></p>
+<p>修改binlog_row_image参数值，更新一条记录<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="builtin-name">set</span> session <span class="attribute">binlog_row_image</span>=minimal;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; update t <span class="builtin-name">set</span> <span class="attribute">c2</span>=<span class="string">'this 2'</span> where <span class="attribute">id</span>=2;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 0</span><br></pre></td></tr></table></figure></p>
+<p>查看binlog文件记录内容（只截取新增部分操作）<br><strong> 从记录内容可看出，日志只记录了修改那行数据的第三列，即c2的值，未变动的列并未记录</strong><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">### UPDATE `test`.`t`</span><br><span class="line">### WHERE</span><br><span class="line">###   @<span class="number">1</span>=<span class="number">2</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></span><br><span class="line">###   @<span class="number">2</span>=<span class="string">'bb'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></span><br><span class="line">###   @<span class="number">3</span>=NULL <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=1 */</span></span><br><span class="line">### SET</span><br><span class="line">###   @<span class="number">3</span>=<span class="string">'this 2'</span> <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></span><br><span class="line"># at <span class="number">1086</span></span><br><span class="line">#<span class="number">170713</span> <span class="number">15</span>:<span class="number">18</span>:<span class="number">21</span> server id <span class="number">1</span>  end_log_pos <span class="number">1117</span> CRC32 <span class="number">0xfdd198ec</span> 	Xid = <span class="number">50</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span>;</span><br><span class="line">SET @@SESSION.GTID_NEXT= <span class="string">'AUTOMATIC'</span> <span class="comment">/* added by mysqlbinlog */</span> <span class="comment">/*!*/</span>;</span><br><span class="line">DELIMITER ;</span><br><span class="line"># End <span class="keyword">of</span> log file</span><br><span class="line"><span class="comment">/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/</span>;</span><br><span class="line"><span class="comment">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/</span>;</span><br></pre></td></tr></table></figure></p>
+<p>继续修改binlog_row_image参数值，更新一条记录<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="builtin-name">set</span> session <span class="attribute">binlog_row_image</span>=noblob;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; update t <span class="builtin-name">set</span> <span class="attribute">c1</span>=<span class="string">'woqu'</span> where <span class="attribute">id</span>=3;</span><br><span class="line">Query OK, 1 row affected (0.01 sec)</span><br><span class="line">Rows matched: 1  Changed: 1  Warnings: 0</span><br></pre></td></tr></table></figure></p>
+<p>查看binlog文件记录内容（同上）<br><strong> 从记录内容可以发现，日志只记录了第一列和第二列的数据，并没有记录第三列text属性的值 </strong><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">### UPDATE `test`.`t`</span><br><span class="line">### WHERE</span><br><span class="line">###   @<span class="number">1</span>=<span class="number">3</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></span><br><span class="line">###   @<span class="number">2</span>=<span class="string">'fff'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></span><br><span class="line">###   @<span class="number">3</span>=<span class="string">'llala'</span> <span class="comment">/* BLOB/TEXT meta=2 nullable=1 is_null=0 */</span></span><br><span class="line">### SET</span><br><span class="line">###   @<span class="number">1</span>=<span class="number">3</span> <span class="comment">/* INT meta=0 nullable=1 is_null=0 */</span></span><br><span class="line">###   @<span class="number">2</span>=<span class="string">'woqu'</span> <span class="comment">/* VARSTRING(30) meta=30 nullable=1 is_null=0 */</span></span><br><span class="line"># at <span class="number">1640</span></span><br><span class="line">#<span class="number">170713</span> <span class="number">15</span>:<span class="number">24</span>:<span class="number">28</span> server id <span class="number">1</span>  end_log_pos <span class="number">1671</span> CRC32 <span class="number">0x429c269c</span> 	Xid = <span class="number">55</span></span><br><span class="line">COMMIT<span class="comment">/*!*/</span>;</span><br></pre></td></tr></table></figure></p>
 <p><strong> 总结一下binlog_row_format三种参数的记录差异 </strong></p>
 <ul>
 <li>FULL: 记录修改行的所有列数据</li>
@@ -499,13 +515,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechat-reward-image.JPG" alt="Lee WeChat Pay"/>
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.JPG" alt="wzqnls WeChat Pay"/>
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay-reward-image.JPG" alt="Lee Alipay"/>
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.JPG" alt="wzqnls Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -580,12 +596,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzcwNi8xNDIzNw=="></div>
     
   </div>
 
@@ -622,10 +633,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
-               alt="Lee" />
-          <p class="site-author-name" itemprop="name">Lee</p>
+               alt="wzqnls" />
+          <p class="site-author-name" itemprop="name">wzqnls</p>
            
-              <p class="site-description motion-element" itemprop="description">No bb, show me your code!</p>
+              <p class="site-description motion-element" itemprop="description">你必须非常努力，才能看起来毫不费力</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -663,6 +674,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -741,19 +759,19 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-fighter-jet"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Lee</span>
+  <span class="author" itemprop="copyrightHolder">wzqnls</span>
 </div>
 
 
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.7k字</span>
+  <span class="post-count">博客全站共7.3k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -809,11 +827,12 @@
   
 
 
+
+
+
+
   
-
-
-
-
+  
 
 
 
@@ -840,7 +859,10 @@
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
 
 
   
@@ -854,13 +876,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
@@ -877,26 +892,6 @@
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://lee.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/13/MySQL二进制日志格式类型详解/';
-          this.page.identifier = '2017/07/13/MySQL二进制日志格式类型详解/';
-          this.page.title = 'MySQL二进制日志格式类型详解';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://lee.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
 
   
 
@@ -921,10 +916,342 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
 
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
@@ -955,5 +1282,7 @@
 
   
 
+
+  <!-- 页面点击小红心 --> <script type="text/javascript" src="/js/src/love.js"></script>
 </body>
 </html>
